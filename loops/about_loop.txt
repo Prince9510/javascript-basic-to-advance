@@ -1,0 +1,37 @@
+Loops in javascript
+
+1) for loop:
+   => A loop that repeats a block of code a specific number of times.
+   => Syntax: 
+   
+   for (initialization; condition; increment/decrement) {
+      // code  
+   }
+
+2) while loop:
+   => A loop that executes as long as the specified condition is true.
+   => Syntax: 
+   
+   while (condition) { 
+        // code 
+    }
+
+3) do...while loop:
+   => A loop that executes the block of code at least once, then repeats as long as the condition is true.
+   => Syntax: 
+   do { 
+        // code 
+      } while (condition)
+
+4) for...in loop:
+   => A loop that iterates over the enumerable properties of an object.
+   => Syntax: 
+   for (variable in object) { 
+     // code 
+    }
+
+5) for...of loop:
+   => A loop that iterates over the values of an iterable object (e.g., arrays, strings).
+   => Syntax: for (variable of iterable) { 
+        // code 
+       }
