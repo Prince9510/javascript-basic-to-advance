@@ -1,0 +1,16 @@
+# JavaScript Arrays
+
+1) What is an Array?
+An array in JavaScript is a data structure that allows you to store multiple values in a single variable. Arrays can hold values of any data type, including numbers, strings, objects, and even other arrays.
+
+2) Creating an Array
+
+You can create an array using:
+=> Array literal:
+    let fruits = ["apple", "banana", "cherry"];
+    
+=> `new Array()` constructor:
+    let numbers = new Array(1, 2, 3, 4);
+
+3) Accessing Array Elements
+Array elements are accessed using their index, starting from 0:

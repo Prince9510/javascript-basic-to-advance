@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Methods with Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .table-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:hover {
+            background: #e6f3ff;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 600px) {
+            .table-container {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Array Methods with Examples</h1>
+
+    <!-- 1. Iteration & Transformation Methods -->
+    <h2>🔁 Iteration & Transformation Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>forEach(callback)</code></td>
+                    <td>Executes a callback for each element.</td>
+                    <td>No</td>
+                    <td><code>undefined</code></td>
+                    <td><code>[1, 2, 3].forEach(x => console.log(x))</code></td>
+                    <td><code>1 2 3</code> (logs)</td>
+                </tr>
+                <tr>
+                    <td><code>map(callback)</code></td>
+                    <td>Creates a new array with results of calling a callback.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, 2, 3].map(x => x * 2)</code></td>
+                    <td><code>[2, 4, 6]</code></td>
+                </tr>
+                <tr>
+                    <td><code>filter(callback)</code></td>
+                    <td>Creates a new array with elements that pass a test.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, 2, 3].filter(x => x > 1)</code></td>
+                    <td><code>[2, 3]</code></td>
+                </tr>
+                <tr>
+                    <td><code>reduce(callback, initialValue)</code></td>
+                    <td>Reduces array to a single value using a callback.</td>
+                    <td>No</td>
+                    <td>Single value</td>
+                    <td><code>[1, 2, 3].reduce((sum, x) => sum + x, 0)</code></td>
+                    <td><code>6</code></td>
+                </tr>
+                <tr>
+                    <td><code>reduceRight(callback, initialValue)</code></td>
+                    <td>Like <code>reduce</code>, but right to left.</td>
+                    <td>No</td>
+                    <td>Single value</td>
+                    <td><code>["a", "b", "c"].reduceRight((str, x) => str + x, "")</code></td>
+                    <td><code>"cba"</code></td>
+                </tr>
+                <tr>
+                    <td><code>every(callback)</code></td>
+                    <td>Tests if all elements pass a callback test.</td>
+                    <td>No</td>
+                    <td><code>boolean</code></td>
+                    <td><code>[1, 2, 3].every(x => x > 0)</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>some(callback)</code></td>
+                    <td>Tests if at least one element passes a callback test.</td>
+                    <td>No</td>
+                    <td><code>boolean</code></td>
+                    <td><code>[1, 2, 3].some(x => x > 2)</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>flatMap(callback)</code></td>
+                    <td>Maps each element and flattens result by one level.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, 2].flatMap(x => [x, x])</code></td>
+                    <td><code>[1, 1, 2, 2]</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 2. Addition / Removal Methods -->
+    <h2>🔢 Addition / Removal Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>push(...items)</code></td>
+                    <td>Adds one or more elements to the end.</td>
+                    <td>Yes</td>
+                    <td>New length</td>
+                    <td><code>let arr = [1, 2]; arr.push(3)</code></td>
+                    <td><code>3</code> (arr: <code>[1, 2, 3]</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>pop()</code></td>
+                    <td>Removes and returns the last element.</td>
+                    <td>Yes</td>
+                    <td>Removed element</td>
+                    <td><code>let arr = [1, 2, 3]; arr.pop()</code></td>
+                    <td><code>3</code> (arr: <code>[1, 2]</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>shift()</code></td>
+                    <td>Removes and returns the first element.</td>
+                    <td>Yes</td>
+                    <td>Removed element</td>
+                    <td><code>let arr = [1, 2, 3]; arr.shift()</code></td>
+                    <td><code>1</code> (arr: <code>[2, 3]</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>unshift(...items)</code></td>
+                    <td>Adds one or more elements to the start.</td>
+                    <td>Yes</td>
+                    <td>New length</td>
+                    <td><code>let arr = [2, 3]; arr.unshift(1)</code></td>
+                    <td><code>3</code> (arr: <code>[1, 2, 3]</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>splice(start, deleteCount, ...items)</code></td>
+                    <td>Adds/removes elements at a specific index.</td>
+                    <td>Yes</td>
+                    <td>Array of removed elements</td>
+                    <td><code>let arr = [1, 2, 3]; arr.splice(1, 1, "a")</code></td>
+                    <td><code>[2]</code> (arr: <code>[1, "a", 3]</code>)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3. Search & Inspection Methods -->
+    <h2>🔍 Search & Inspection Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>find(callback)</code></td>
+                    <td>Returns first element that satisfies a callback.</td>
+                    <td>No</td>
+                    <td>Element or <code>undefined</code></td>
+                    <td><code>[1, 2, 3].find(x => x > 1)</code></td>
+                    <td><code>2</code></td>
+                </tr>
+                <tr>
+                    <td><code>findIndex(callback)</code></td>
+                    <td>Returns index of first element that satisfies a callback.</td>
+                    <td>No</td>
+                    <td>Index or <code>-1</code></td>
+                    <td><code>[1, 2, 3].findIndex(x => x > 1)</code></td>
+                    <td><code>1</code></td>
+                </tr>
+                <tr>
+                    <td><code>findLast(callback)</code></td>
+                    <td>Returns last element that satisfies a callback.</td>
+                    <td>No</td>
+                    <td>Element or <code>undefined</code></td>
+                    <td><code>[1, 2, 3].findLast(x => x > 1)</code></td>
+                    <td><code>3</code></td>
+                </tr>
+                <tr>
+                    <td><code>findLastIndex(callback)</code></td>
+                    <td>Returns index of last element that satisfies a callback.</td>
+                    <td>No</td>
+                    <td>Index or <code>-1</code></td>
+                    <td><code>[1, 2, 3].findLastIndex(x => x > 1)</code></td>
+                    <td><code>2</code></td>
+                </tr>
+                <tr>
+                    <td><code>includes(value)</code></td>
+                    <td>Checks if array includes a specific value.</td>
+                    <td>No</td>
+                    <td><code>boolean</code></td>
+                    <td><code>[1, 2, 3].includes(2)</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>indexOf(value)</code></td>
+                    <td>Returns first index of a value, or <code>-1</code>.</td>
+                    <td>No</td>
+                    <td>Index or <code>-1</code></td>
+                    <td><code>[1, 2, 3].indexOf(2)</code></td>
+                    <td><code>1</code></td>
+                </tr>
+                <tr>
+                    <td><code>lastIndexOf(value)</code></td>
+                    <td>Returns last index of a value, or <code>-1</code>.</td>
+                    <td>No</td>
+                    <td>Index or <code>-1</code></td>
+                    <td><code>[1, 2, 2].lastIndexOf(2)</code></td>
+                    <td><code>2</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. Joining & Splitting Methods -->
+    <h2>🔗 Joining & Splitting Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>join(separator)</code></td>
+                    <td>Joins all elements into a string with a separator.</td>
+                    <td>No</td>
+                    <td><code>string</code></td>
+                    <td><code>[1, 2, 3].join("-")</code></td>
+                    <td><code>"1-2-3"</code></td>
+                </tr>
+                <tr>
+                    <td><code>concat(...arrays)</code></td>
+                    <td>Merges arrays into a new array.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, 2].concat([3, 4])</code></td>
+                    <td><code>[1, 2, 3, 4]</code></td>
+                </tr>
+                <tr>
+                    <td><code>slice(start, end)</code></td>
+                    <td>Extracts a portion of the array into a new array.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, 2, 3, 4].slice(1, 3)</code></td>
+                    <td><code>[2, 3]</code></td>
+                </tr>
+                <tr>
+                    <td><code>flat(depth)</code></td>
+                    <td>Flattens nested arrays up to a specified depth.</td>
+                    <td>No</td>
+                    <td>New array</td>
+                    <td><code>[1, [2, [3]]].flat(2)</code></td>
+                    <td><code>[1, 2, 3]</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 5. Utility & Manipulation Methods -->
+    <h2>🛠️ Utility & Manipulation Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description Dolan</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>sort(compareFn)</code></td>
+                    <td>Sorts the array in place.</td>
+                    <td>Yes</td>
+                    <td>Sorted array</td>
+                    <td><code>let arr = [3, 1, 2]; arr.sort((a, b) => a - b)</code></td>
+                    <td><code>[1, 2, 3]</code></td>
+                </tr>
+                <tr>
+                    <td><code>reverse()</code></td>
+                    <td>Reverses the array in place.</td>
+                    <td>Yes</td>
+                    <td>Reversed array</td>
+                    <td><code>let arr = [1, 2, 3]; arr.reverse()</code></td>
+                    <td><code>[3, 2, 1]</code></td>
+                </tr>
+                <tr>
+                    <td><code>toString()</code></td>
+                    <td>Converts the array to a string.</td>
+                    <td>No</td>
+                    <td><code>string</code></td>
+                    <td><code>[1, 2, 3].toString()</code></td>
+                    <td><code>"1,2,3"</code></td>
+                </tr>
+                <tr>
+                    <td><code>valueOf()</code></td>
+                    <td>Returns the array itself.</td>
+                    <td>No</td>
+                    <td>Array</td>
+                    <td><code>[1, 2, 3].valueOf()</code></td>
+                    <td><code>[1, 2, 3]</code></td>
+                </tr>
+                <tr>
+                    <td><code>toLocaleString()</code></td>
+                    <td>Converts array elements to localized strings.</td>
+                    <td>No</td>
+                    <td><code>string</code></td>
+                    <td><code>[1, 2, 3].toLocaleString()</code></td>
+                    <td><code>"1,2,3"</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 6. Copy & Fill Methods -->
+    <h2>🔄 Copy & Fill Methods</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                    <th>Mutates Array?</th>
+                    <th>Returns</th>
+                    <th>Example</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>copyWithin(target, start, end)</code></td>
+                    <td>Copies part of the array to another location in the same array.</td>
+                    <td>Yes</td>
+                    <td>Modified array</td>
+                    <td><code>let arr = [1, 2, 3, 4]; arr.copyWithin(0, 2)</code></td>
+                    <td><code>[3, 4, 3, 4]</code></td>
+                </tr>
+                <tr>
+                    <td><code>fill(value, start, end)</code></td>
+                    <td>Fills the array with a static value.</td>
+                    <td>Yes</td>
+                    <td>Modified array</td>
+                    <td><code>let arr = [1, 2, 3]; arr.fill(0, 1)</code></td>
+                    <td><code>[1, 0, 0]</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

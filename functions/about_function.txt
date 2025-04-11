@@ -1,0 +1,38 @@
+1) What is a function?
+
+=> A function in JavaScript is a reusable block of code designed to perform a specific task. It can take input (called parameters), 
+process it, and optionally return an output (return value). Functions help organize code, improve readability, and reduce repetition.
+
+2) How many types of functions are there in JavaScript?
+
+   => Named Function:
+   A named function is a function that has a specific identifier or name. It is declared with a function name and can be referenced or 
+   invoked using that name.
+
+   => Anonymous Function:
+   An anonymous function is a function without a name. It is typically used where functions are treated as values, such as in 
+   assignments or function arguments.
+
+   => Arrow Function:
+   An arrow function is a shorter syntax for writing anonymous functions. It is useful for concise function expressions and does not
+   have its own bindings to `this` or `arguments`.
+
+   => Function Expression:
+   A function expression involves creating a function and assigning it to a variable. The function can be named or anonymous and is 
+   not hoisted like function declarations.
+
+   => Immediately Invoked Function Expression (IIFE):
+   An IIFE is a function that is defined and immediately executed. It is commonly used to create a new scope and avoid polluting the 
+   global namespace.
+
+   => Constructor Function:
+   A constructor function is a function used with the `new` keyword to create new object instances. It serves as a blueprint for 
+   creating objects with specific properties and methods.
+
+   => Generator Function:
+   A generator function is a special type of function that can pause its execution and resume later. It uses the `yield` keyword and 
+   returns an iterator object.
+
+   => Async Function:
+   An async function is a function declared with the `async` keyword. It allows the use of `await` within it, enabling asynchronous
+   code to be written in a more synchronous style.
