@@ -53,5 +53,15 @@ const product = (a, b) => {
 
 console.log(product(3, 4));
 
+// Question 5 : find missing numbers from an array
 
-// Question 5 : 
+function miss(arr) {
+  for (let i = 1; i <= arr.length; i++) {
+    if (!arr.includes(i)) {
+      return i;
+    }
+  }
+}
+
+console.log(miss([1, 2, 3, 5]));
+
