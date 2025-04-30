@@ -14,7 +14,7 @@ console.log(5 != '5');  // false
 
 
 // Not equal value or type	(!==)
-console.log(5 !== '5'); // true 
+console.log(5 !== '5'); // true  
 
 
 // Greater than (>)

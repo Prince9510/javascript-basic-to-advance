@@ -42,8 +42,8 @@ let Increment_Value = 5;
 
 console.log(Increment_Value++); // output: 5 (post-increment)
 console.log(Increment_Value);   // output: 6
-
-Increment_Value = 5; // Resetting value
+ 
+Increment_Value = 5; 
 console.log(++Increment_Value); // output: 6 (pre-increment)
 
 // Decrement (--)
@@ -52,5 +52,5 @@ let Decrement_Value = 5;
 console.log(Decrement_Value--); // output: 5 (post-decrement)
 console.log(Decrement_Value);   // output: 4
 
-Decrement_Value = 5; // Resetting value
+Decrement_Value = 5; 
 console.log(--Decrement_Value); // output: 4 (pre-decrement)

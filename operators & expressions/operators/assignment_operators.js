@@ -15,7 +15,7 @@ x -= y; // x = x - y
 console.log(x); // 10
 
 // Multiply and assign	
-x *= y; // x = x * y
+x *= y; // x = x * y 
 console.log(x); // 50
 
 // Divide and assign	

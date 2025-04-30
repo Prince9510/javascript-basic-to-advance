@@ -17,7 +17,7 @@ if(num1 % 2 === 1 || num1 % 2 === 0){
 }else{
     console.log("|| : both condition are not true");
 }
-
+ 
 
 // NOT (!)
 

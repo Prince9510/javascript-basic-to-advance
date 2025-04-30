@@ -23,4 +23,4 @@ console.log(`The weather is ${weather}.`);
 // Example 5
 const score = 85;
 const grade = (score >= 50) ? 'Pass' : 'Fail';
-console.log(`You ${grade} the test.`);
+console.log(`You ${grade} the test.`); 

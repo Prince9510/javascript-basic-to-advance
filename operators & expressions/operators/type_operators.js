@@ -18,4 +18,4 @@ const myDog = new Dog();
 
 console.log(myDog instanceof Dog); // true
 console.log(myDog instanceof Animal); // true
-console.log(myDog instanceof Array); // false
+console.log(myDog instanceof Array); // false 
