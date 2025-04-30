@@ -1,0 +1,36 @@
+1) what is classes?
+
+=> A class in JavaScript is a syntactic sugar over JavaScript's existing prototype-based inheritance. 
+   It allows you to define constructor functions, properties, and methods in a structured and readable way.
+
+
+
+** Key Features of JavaScript Classes **
+
+Use the class keyword.
+Have a special method called constructor() for initializing new objects.
+Support methods, getters, setters, and inheritance via the extends keyword.
+Methods inside a class are automatically added to the class’s prototype.
+
+
+2) what is a constructor?
+
+=> A constructor is a special function used to create and initialize objects in JavaScript. It is invoked using the new keyword
+   and sets up properties and methods for the new object using the this keyword.
+
+* It is called using the new keyword.
+* The this keyword inside a constructor refers to the new object being created.
+
+
+3) what is this keyword?
+=> The this keyword refers to the object that is currently executing the function. Its value depends on the context in which the 
+   function is called
+
+4) what is supar keyword?
+=> The super keyword in JavaScript is used to access and call functions on an object's parent, typically within class inheritance. 
+   It allows a subclass to refer to and invoke methods or constructors from its parent class.
+
+5) what is a extends keyword?
+=> The extends keyword is used in JavaScript to create a class that is a child of another class. It allows the subclass to inherit 
+   properties and methods from the parent class.
+
