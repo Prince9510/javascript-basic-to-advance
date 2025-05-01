@@ -40,3 +40,4 @@ function shuffleArray(array) {
 }
 
 console.log(shuffleArray([1, 2, 3, 4, 5]));
+
