@@ -27,12 +27,12 @@ class Vehicle {
 }
 
 class ElectricVehicle extends Vehicle {
-  static evCount = 0; 
+  static evCount = 0;
 
   constructor(brand, model, year, batteryCapacity) {
     super(brand, model, year);
     this.batteryCapacity = batteryCapacity;
-    this.evID = ++ElectricVehicle.evCount; 
+    this.evID = ++ElectricVehicle.evCount;
 
     console.log(
       `EV Registered: ${this.brand} ${this.model} (${this.year}), Battery: ${this.batteryCapacity}kWh, ID: ${this.evID}`

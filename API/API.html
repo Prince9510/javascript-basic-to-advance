@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="shadow-div">
+        <div class="inputs-div">
+          <form id="myForm">
+            <div class="style-input-label">
+              <label for="">Full Name</label>
+              <input type="text" placeholder="Full Name" id="fullName" />
+              <p class="validation_error" id="name_error"></p>
+            </div>
+            <div class="style-input-label">
+              <label for="">Email</label>
+              <input type="email" placeholder="Email" id="email" />
+              <p class="validation_error" id="email_error"></p>
+            </div>
+            <div class="style-input-label">
+              <label for="">Phone</label>
+              <input type="text" placeholder="Phone" id="phone" />
+              <p class="validation_error" id="phone_error"></p>
+            </div>
+            <div class="style-input-label">
+              <label for="">Password</label>
+              <input type="text" placeholder="Password" id="password" />
+              <p class="validation_error" id="password_error"></p>
+            </div>
+            <div class="style-input-label">
+              <label for="">Pincode</label>
+              <div class="pincode-div">
+                <input type="text" placeholder="Pincode" id="pincode" />
+                <button type="button" id="fetchPincode">FETCH</button>
+              </div>
+              <p class="validation_error" id="pincode_error"></p>
+            </div>
+
+            <div class="locations">
+              <div class="inner-location">
+                <label for="">City Location</label>
+                <input type="text" id="cityLocation" disabled />
+              </div>
+
+              <div class="inner-location">
+                <label for="">District</label>
+                <input type="text" id="district" disabled />
+              </div>
+
+              <div class="inner-location">
+                <label for="">State</label>
+                <input type="text" id="state" disabled />
+              </div>
+
+              <div class="inner-location">
+                <label for="">Country</label>
+                <input type="text" id="country" disabled />
+              </div>
+            </div>
+
+            <div class="submit-btn">
+              <button type="submit" id="formSubmit_btn">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="table-div">
+          <div class="search_filter">
+            <div class="search-div">
+              <select name="" id="searchBy" onchange="findAndFilterData()">
+                <option value="name">name</option>
+                <option value="id">id</option>
+                <option value="email">email</option>
+              </select>
+
+              <input
+                type="text"
+                placeholder="search by name"
+                id="searchInput"
+              />
+            </div>
+            <!-- <input type="text" /> -->
+            <div class="filter-div">
+              <div class="filter">
+                <select name="" id="mainLocationSelectTag"></select>
+
+                <select name="" id="citySelectTag"></select>
+              </div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th class="emailth">Email</th>
+                <th>Phone</th>
+                <th>Password</th>
+                <th>Pincode</th>
+                <th>Location</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+
+          <div class="close" title="ctrl + enter">
+            <i class="ri-expand-diagonal-s-line" id="full"></i>
+            <i class="ri-close-large-line" id="closeI"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

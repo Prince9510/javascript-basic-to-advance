@@ -23,12 +23,12 @@ const person = {
 
 console.log(person.firstName);
 console.log(person["lastName"]);
-person.greet(); 
+person.greet();
 
 const car = {
   brand: "abc",
   model: "23",
-  specifications: { 
+  specifications: {
     color: "Red",
     range: "100 miles",
     autopilot: true,

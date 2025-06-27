@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="addData(event)">
+      <input type="text" placeholder="name" class="nameInput" />
+      <input type="text" placeholder="age" class="ageInput" />
+      <input type="text" placeholder="address" class="addressInput" />
+      <input type="text" placeholder="gender" class="genderInput" />
+      <button type="submit" class="sub">SUBMIT</button>
+    </form>
+    <p style="color: red; display: none">fill all blanks</p>
+    <table border="2" width="30%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>AGE</th>
+          <th>ADDRESS</th>
+          <th>GENDER</th>
+          <th colspan="2">ACTION</th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  let tbody = document.querySelector("tbody");
+  let nameInput = document.querySelector(".nameInput");
+  let ageInput = document.querySelector(".ageInput");
+  let addressInput = document.querySelector(".addressInput");
+  let genderInput = document.querySelector(".genderInput");
+  let p = document.querySelector("p");
+  let sub = document.querySelector(".sub");
+  let editIndex = null;
+
+  let data = [
+    {
+      id: 1749637825084,
+      name: "abc",
+      age: 20,
+      address: "xyz",
+      gender: "male",
+    },
+    {
+      id: 1749637825082,
+      name: "abc2sssssssssss",
+      age: 20,
+      address: "xyz",
+      gender: "male",
+    },
+    {
+      id: 1749637825085,
+      name: "abc3",
+      age: 20,
+      address: "xyz",
+      gender: "male",
+    },
+    {
+      id: 1749637825354,
+      name: "abc4",
+      age: 20,
+      address: "xyz",
+      gender: "male",
+    },
+    {
+      id: 1749637824785,
+      name: "abc5",
+      age: 20,
+      address: "xyz",
+      gender: "male",
+    },
+  ];
+
+  // function API() {
+  //   let res = fetch("http://localhost:5000/Data")
+  //     .then((response) => response.json())
+  //     .then((item) => {
+  //       data = item;
+  //       fillOutDetail();
+  //     });
+
+  //   console.log(data);
+  // }
+  // API();
+
+  function fillOutDetail() {
+    let rows = "";
+    data.forEach((e, i) => {
+      rows += `
+      <tr key="${i}">
+        <td>${e.id}</td>
+        <td>${e.name}</td>
+        <td>${e.age}</td>
+        <td>${e.address}</td>
+        <td>${e.gender}</td>
+        <td><button class="edit-btn" onclick="edit(${e.id})">EDIT</button></td>
+        <td><button class="delete-btn" onclick="deleteData(${e.id})">DELETE</button></td>
+      </tr>
+      `;
+    });
+    tbody.innerHTML = rows;
+  }
+
+  class addDetails {
+    constructor(id, name, age, address, gender) {
+      this.id = id;
+      this.name = name;
+      this.age = age;
+      this.address = address;
+      this.gender = gender;
+    }
+
+    add() {
+      let obj = {
+        id: this.id,
+        name: this.name,
+        age: this.age,
+        address: this.address,
+        gender: this.gender,
+      };
+      data.push(obj);
+    }
+
+    editItem(e) {
+      let index = data.findIndex((item) => item.id == editIndex.id);
+      data[index].name = nameInput.value;
+      data[index].age = ageInput.value;
+      data[index].address = addressInput.value;
+      data[index].gender = genderInput.value;
+      console.log("new");
+      sub.innerText = "SUBMIT";
+      p.style.display = "none";
+      editIndex = null;
+    }
+
+    deleteItem(e) {
+      let index = data.findIndex((item) => item.id == e);
+      data.splice(index, 1);
+      fillOutDetail();
+    }
+  }
+
+  function addData(e) {
+    if (e) {
+      e.preventDefault();
+    }
+
+    if (editIndex) {
+      if (
+        nameInput.value == "" ||
+        ageInput.value == "" ||
+        addressInput.value == "" ||
+        genderInput.value == ""
+      ) {
+        p.style.display = "block";
+        return;
+      }
+      const edit = new addDetails(editIndex);
+      edit.editItem(editIndex);
+    } else {
+      if (
+        nameInput.value == "" ||
+        ageInput.value == "" ||
+        addressInput.value == "" ||
+        genderInput.value == ""
+      ) {
+        p.style.display = "block";
+        return;
+      }
+
+      const newData = new addDetails(
+        Date.now(),
+        nameInput.value,
+        ageInput.value,
+        addressInput.value,
+        genderInput.value
+      );
+
+      newData.add();
+    }
+
+    fillOutDetail();
+    nameInput.value = "";
+    ageInput.value = "";
+    addressInput.value = "";
+    genderInput.value = "";
+    nameInput.focus();
+    p.style.display = "none";
+  }
+
+  function edit(e) {
+    let findData = data.filter((item) => item.id == e);
+    sub.innerText = "EDIT";
+    nameInput.focus();
+    nameInput.value = findData[0].name;
+    ageInput.value = findData[0].age;
+    addressInput.value = findData[0].address;
+    genderInput.value = findData[0].gender;
+    console.log(findData[0]);
+    editIndex = findData[0];
+  }
+
+  function deleteData(e) {
+    const del = new addDetails(e);
+    del.deleteItem(e);
+  }
+
+  fillOutDetail();
+</script>

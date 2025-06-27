@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=., initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      height: 100vh;
+      /* width: 100%; */
+      flex-direction: column;
+      /* background-color: red; */
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    input {
+      margin-top: 10px;
+    }
+    .btn-submit {
+      margin-top: 10px;
+      height: 30px;
+      width: 150px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: red;
+    }
+    .id {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input class="name" type="text" placeholder="name" />
+      <input class="city" type="text" placeholder="city" />
+      <input class="age" type="number" placeholder="age" />
+      <input type="text" disabled placeholder="id" class="id" />
+
+      <p class="warning"></p>
+      <button class="btn-submit" onclick="submitData()">Submit</button>
+      <table border="1" width="500px">
+        <tbody class="tbody">
+          <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>city</th>
+            <th>age</th>
+            <th colspan="2">action</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  let nameInput = document.querySelector(".name");
+  let cityInput = document.querySelector(".city");
+  let ageInput = document.querySelector(".age");
+  let submit_btn = document.querySelector(".btn-submit");
+  let warning = document.querySelector(".warning");
+  let tbody = document.querySelector(".tbody");
+  let id = document.querySelector(".id");
+  let deleteBtn = document.querySelector(".delete-btn");
+  let editIndex = false;
+  let data = [];
+
+  function submitData() {
+    let name = nameInput.value;
+    let city = cityInput.value;
+    let age = ageInput.value;
+
+    if (editIndex) {
+      if (
+        nameInput.value == "" ||
+        cityInput.value == "" ||
+        ageInput.value == ""
+      ) {
+        warning.innerText = "fill the all blanks";
+        return;
+      }
+
+      let inputeditData = localStorage.getItem("TODO's");
+      let editItem = [];
+      editItem = JSON.parse(inputeditData);
+
+      let index = editItem.findIndex((item) => item.id == editIndex);
+
+      console.log(index);
+
+      editItem[index].name = name;
+      editItem[index].city = city;
+      editItem[index].age = age;
+      localStorage.setItem("TODO's", JSON.stringify(editItem));
+      getData();
+
+      id.value = "";
+      nameInput.value = "";
+      cityInput.value = "";
+      ageInput.value = "";
+      editIndex = false;
+    } else {
+      if (
+        nameInput.value == "" ||
+        cityInput.value == "" ||
+        ageInput.value == ""
+      ) {
+        warning.innerText = "fill the all blanks";
+        return;
+      }
+      let pre = localStorage.getItem("TODO's");
+      if (pre) {
+        data = JSON.parse(pre);
+      } else {
+        data = [];
+      }
+
+      let newData = {
+        id: Date.now(),
+        name: name,
+        city: city,
+        age: age,
+      };
+
+      data.push(newData);
+      localStorage.setItem("TODO's", JSON.stringify(data));
+
+      getData();
+
+      id.value = "";
+      nameInput.value = "";
+      cityInput.value = "";
+      ageInput.value = "";
+    }
+    nameInput.focus();
+  }
+
+  function getData() {
+    let fetchData = localStorage.getItem("TODO's");
+    let tr = `
+		<tr>
+			<th>ID</th>
+			<th>name</th> 
+			<th>city</th>
+			<th>age</th>
+			<th colspan="2">action</th>
+		</tr>
+		`;
+
+    let arr = [];
+    if (fetchData) {
+      arr = JSON.parse(fetchData);
+    }
+    arr.forEach((e, i) => {
+      tr += `
+				<tr key=${i}>
+					<td>${e.id}</td>
+					<td>${e.name}</td>
+					<td>${e.city}</td>
+					<td>${e.age}</td>
+					<td><button onclick="editData(${e.id})">EDIT</button></td>	
+					<td><button class="delete-btn" onclick="deleteData(${e.id})">DELETE</button></td>	
+				</tr>
+			`;
+    });
+    tbody.innerHTML = tr;
+  }
+
+  getData();
+
+  function deleteData(e) {
+    let del = localStorage.getItem("TODO's");
+    let data = [];
+    data = JSON.parse(del);
+
+    let filterData = data.filter((item) => item.id !== e);
+    localStorage.setItem("TODO's", JSON.stringify(filterData));
+    getData();
+  }
+
+  function editData(e) {
+    nameInput.focus();
+
+    let data = localStorage.getItem("TODO's");
+    let editItem = [];
+    editItem = JSON.parse(data);
+
+    console.log(editItem);
+
+    let filterData = editItem.filter((item) => item.id == e);
+
+    console.log(filterData);
+
+    id.value = filterData[0].id;
+    nameInput.value = filterData[0].name;
+    cityInput.value = filterData[0].city;
+    ageInput.value = filterData[0].age;
+
+    editIndex = e;
+  }
+</script>

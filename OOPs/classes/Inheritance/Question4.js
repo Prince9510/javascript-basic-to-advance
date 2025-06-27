@@ -5,7 +5,6 @@ Add a method cancelOrder() that:
   Sets the status to "cancelled" only if the current status is "pending"
   Logs a message if cancellation is not allowed (e.g., already confirmed)*/
 
-  
 class Order {
   constructor(orderId, amount, status = "pending") {
     this.orderId = orderId;

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- remix icon cdn  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <!-- <img src="./logo-example.png" alt="" /> -->
+        <h1>LOGO</h1>
+      </div>
+
+      <div class="nav-content">
+        <div class="nav-link">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact</li>
+            <li>Support</li>
+            <li>Lable</li>
+            <li>More</li>
+          </ul>
+        </div>
+        <div class="sidebar-btn">
+          <div class="moon" onclick="dark()">
+            <i class="ri-moon-fill" id="dark-moon"></i>
+            <i class="ri-moon-line" id="light-moon"></i>
+          </div>
+          <div class="bar" onclick="openSideBar()">
+            <i class="ri-bar-chart-horizontal-line"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-container">
+      <div class="sidebar-nav">
+        <div class="close-div" onclick="closeSideBar()">
+          <i class="ri-close-large-line"></i>
+        </div>
+      </div>
+      <div class="parentOfCartBoxAndBill">
+        <div class="sidebar-content-box">
+          <!-- main cart content start -->
+          <div class="cart-box">
+            <div class="item-image-box">
+              <img
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="item-content">
+              <div class="upper-content">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+                <h5>₹4545 <del>₹5000</del></h5>
+              </div>
+
+              <div class="cart-count">
+                <h5>⭐7.8</h5>
+                <div class="cart-main-btn">
+                  <div class="minus">-</div>
+                  <div class="count">0</div>
+                  <div class="plus">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-box">
+            <div class="item-image-box">
+              <img
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="item-content">
+              <div class="upper-content">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+                <h5>₹4545 <del>₹5000</del></h5>
+              </div>
+
+              <div class="cart-count">
+                <h5>⭐7.8</h5>
+                <div class="cart-main-btn">
+                  <div class="minus">-</div>
+                  <div class="count">0</div>
+                  <div class="plus">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-box">
+            <div class="item-image-box">
+              <img
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="item-content">
+              <div class="upper-content">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+                <h5>₹4545 <del>₹5000</del></h5>
+              </div>
+
+              <div class="cart-count">
+                <h5>⭐7.8</h5>
+                <div class="cart-main-btn">
+                  <div class="minus">-</div>
+                  <div class="count">0</div>
+                  <div class="plus">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-box">
+            <div class="item-image-box">
+              <img
+                src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                alt=""
+              />
+            </div>
+            <div class="item-content">
+              <div class="upper-content">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+                <h5>₹4545 <del>₹5000</del></h5>
+              </div>
+
+              <div class="cart-count">
+                <h5>⭐7.8</h5>
+                <div class="cart-main-btn">
+                  <div class="minus">-</div>
+                  <div class="count">0</div>
+                  <div class="plus">+</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- main cart content end -->
+        </div>
+
+        <div class="bill">
+          <div class="amount">
+            <h3>₹1200</h3>
+            <span>Inclusive all taxes</span>
+          </div>
+          <div class="pay-btn">
+            <button>Pay Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let root = document.documentElement;
+  let light_moon = document.getElementById("light-moon");
+  let dark_moon = document.getElementById("dark-moon");
+  let bt = document.getElementById("bt");
+  let sideBarContainer = document.querySelector(".sidebar-container");
+
+  let theme = false;
+  function dark() {
+    if (theme) {
+      root.style.setProperty("--black", "#222222");
+      root.style.setProperty("--white", "#f2edf3");
+      root.style.setProperty("--shadow", "rgba(0, 0, 0, 0.24) 0px 3px 8px");
+      root.style.setProperty("--cart-box", "#fff");
+      root.style.setProperty("--cart-count-btn", "#f1f2f4");
+      root.style.setProperty("--black-border", "1px solid #222222");
+      root.style.setProperty("--pay-btn", "#000");
+
+      dark_moon.style.display = "block";
+      light_moon.style.display = "none";
+
+      theme = false;
+    } else {
+      root.style.setProperty("--black", "#f2edf3");
+      root.style.setProperty("--white", "#222222");
+      root.style.setProperty(
+        "--shadow",
+        "rgba(255, 255, 255, 0.34)0px 3px 8px"
+      );
+      root.style.setProperty("--cart-box", "#222831");
+      root.style.setProperty("--cart-count-btn", "#222850");
+      root.style.setProperty("--black-border", "1px solid #fff");
+      root.style.setProperty("--pay-btn", "#222850");
+      root.style.setProperty("--bill", "rgba(255, 255, 255, 0.34)0px 3px 8px");
+
+      dark_moon.style.display = "none";
+      light_moon.style.display = "block";
+
+      theme = true;
+    }
+  }
+
+  function closeSideBar() {
+    sideBarContainer.style.width = "0px";
+  }
+  function openSideBar() {
+    sideBarContainer.style.width = "350px";
+  }
+</script>

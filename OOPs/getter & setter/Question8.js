@@ -31,7 +31,8 @@ class User {
   }
 
   set email(email) {
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {  // regex are includes
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      // regex are includes
       this._email = email;
     } else {
       console.log("Invalid email address");

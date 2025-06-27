@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript DOM Manipulation Methods with Examples</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+      }
+
+      .table-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+
+      tr:hover {
+        background: #e6f3ff;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        background: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+
+      @media (max-width: 600px) {
+        .table-container {
+          grid-template-columns: 1fr;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript DOM Manipulation Methods with Examples</h1>
+
+    <!-- 1. Element Selection Methods -->
+    <h2>🔍 Element Selection Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>getElementById(id)</code></td>
+            <td>Selects an element by its ID.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>document.getElementById("myId")</code></td>
+            <td><code>&lt;div id="myId"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>getElementsByClassName(className)</code></td>
+            <td>Selects elements by class name.</td>
+            <td>No</td>
+            <td><code>HTMLCollection</code></td>
+            <td><code>document.getElementsByClassName("myClass")</code></td>
+            <td><code>[&lt;div class="myClass"&gt;]</code></td>
+          </tr>
+          <tr>
+            <td><code>getElementsByTagName(tagName)</code></td>
+            <td>Selects elements by tag name.</td>
+            <td>No</td>
+            <td><code>HTMLCollection</code></td>
+            <td><code>document.getElementsByTagName("div")</code></td>
+            <td><code>[&lt;div&gt;]</code></td>
+          </tr>
+          <tr>
+            <td><code>querySelector(selector)</code></td>
+            <td>Selects the first element matching a CSS selector.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>document.querySelector(".myClass")</code></td>
+            <td><code>&lt;div class="myClass"&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>querySelectorAll(selector)</code></td>
+            <td>Selects all elements matching a CSS selector.</td>
+            <td>No</td>
+            <td><code>NodeList</code></td>
+            <td><code>document.querySelectorAll(".myClass")</code></td>
+            <td><code>[&lt;div class="myClass"&gt;]</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. Element Creation & Manipulation Methods -->
+    <h2>🛠️ Element Creation & Manipulation Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>createElement(tagName)</code></td>
+            <td>Creates a new element with the specified tag name.</td>
+            <td>No</td>
+            <td><code>Element</code></td>
+            <td><code>document.createElement("div")</code></td>
+            <td><code>&lt;div&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>createTextNode(text)</code></td>
+            <td>Creates a new text node.</td>
+            <td>No</td>
+            <td><code>Text</code></td>
+            <td><code>document.createTextNode("Hello")</code></td>
+            <td><code>Text { "Hello" }</code></td>
+          </tr>
+          <tr>
+            <td><code>appendChild(node)</code></td>
+            <td>Adds a node as the last child of an element.</td>
+            <td>Yes</td>
+            <td><code>Node</code></td>
+            <td><code>parent.appendChild(child)</code></td>
+            <td><code>&lt;child&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>insertBefore(newNode, referenceNode)</code></td>
+            <td>Inserts a new node before a reference node.</td>
+            <td>Yes</td>
+            <td><code>Node</code></td>
+            <td><code>parent.insertBefore(newNode, refNode)</code></td>
+            <td><code>&lt;newNode&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>removeChild(child)</code></td>
+            <td>Removes a child node from an element.</td>
+            <td>Yes</td>
+            <td><code>Node</code></td>
+            <td><code>parent.removeChild(child)</code></td>
+            <td><code>&lt;child&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>replaceChild(newChild, oldChild)</code></td>
+            <td>Replaces a child node with a new node.</td>
+            <td>Yes</td>
+            <td><code>Node</code></td>
+            <td><code>parent.replaceChild(newChild, oldChild)</code></td>
+            <td><code>&lt;oldChild&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>cloneNode(deep)</code></td>
+            <td>Clones an element or node, optionally with its children.</td>
+            <td>No</td>
+            <td><code>Node</code></td>
+            <td><code>element.cloneNode(true)</code></td>
+            <td><code>&lt;clonedElement&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>append(...nodes)</code></td>
+            <td>Appends multiple nodes or strings to an element.</td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td><code>parent.append(child, "text")</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>prepend(...nodes)</code></td>
+            <td>Prepends multiple nodes or strings to an element.</td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td><code>parent.prepend(child, "text")</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>insertAdjacentElement(position, element)</code></td>
+            <td>
+              Inserts an element at a specified position relative to the
+              element.
+            </td>
+            <td>Yes</td>
+            <td><code>Element</code></td>
+            <td>
+              <code>element.insertAdjacentElement("beforebegin", newEl)</code>
+            </td>
+            <td><code>&lt;newEl&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>insertAdjacentHTML(position, html)</code></td>
+            <td>
+              Inserts HTML at a specified position relative to the element.
+            </td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td>
+              <code
+                >element.insertAdjacentHTML("afterend",
+                "&lt;p&gt;Hi&lt;/p&gt;")</code
+              >
+            </td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>insertAdjacentText(position, text)</code></td>
+            <td>
+              Inserts text at a specified position relative to the element.
+            </td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td>
+              <code>element.insertAdjacentText("beforeend", "Hello")</code>
+            </td>
+            <td><code>undefined</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. Attribute & Property Manipulation Methods -->
+    <h2>⚙️ Attribute & Property Manipulation Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>getAttribute(name)</code></td>
+            <td>Gets the value of an attribute.</td>
+            <td>No</td>
+            <td><code>string</code> or <code>null</code></td>
+            <td><code>element.getAttribute("id")</code></td>
+            <td><code>"myId"</code></td>
+          </tr>
+          <tr>
+            <td><code>setAttribute(name, value)</code></td>
+            <td>Sets the value of an attribute.</td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td><code>element.setAttribute("id", "newId")</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>removeAttribute(name)</code></td>
+            <td>Removes an attribute from an element.</td>
+            <td>Yes</td>
+            <td><code>undefined</code></td>
+            <td><code>element.removeAttribute("id")</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>hasAttribute(name)</code></td>
+            <td>Checks if an element has a specified attribute.</td>
+            <td>No</td>
+            <td><code>boolean</code></td>
+            <td><code>element.hasAttribute("id")</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>toggleAttribute(name, force)</code></td>
+            <td>Toggles an attribute on or off.</td>
+            <td>Yes</td>
+            <td><code>boolean</code></td>
+            <td><code>element.toggleAttribute("disabled")</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>classList</code></td>
+            <td>Provides methods to manipulate an element's classes.</td>
+            <td>Yes (via methods)</td>
+            <td><code>DOMTokenList</code></td>
+            <td><code>element.classList.add("active")</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>style</code></td>
+            <td>Accesses or sets inline CSS styles.</td>
+            <td>Yes</td>
+            <td><code>CSSStyleDeclaration</code></td>
+            <td><code>element.style.color = "red"</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>dataset</code></td>
+            <td>Accesses or sets custom data attributes.</td>
+            <td>Yes</td>
+            <td><code>DOMStringMap</code></td>
+            <td><code>element.dataset.id = "123"</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. Content Manipulation Methods -->
+    <h2>📝 Content Manipulation Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>innerHTML</code></td>
+            <td>Gets or sets the HTML content of an element.</td>
+            <td>Yes (setter)</td>
+            <td><code>string</code></td>
+            <td><code>element.innerHTML = "&lt;p&gt;Hi&lt;/p&gt;"</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>outerHTML</code></td>
+            <td>Gets or sets the HTML content including the element.</td>
+            <td>Yes (setter)</td>
+            <td><code>string</code></td>
+            <td><code>element.outerHTML</code></td>
+            <td><code>"&lt;div&gt;Content&lt;/div&gt;"</code></td>
+          </tr>
+          <tr>
+            <td><code>textContent</code></td>
+            <td>Gets or sets the text content of an element.</td>
+            <td>Yes (setter)</td>
+            <td><code>string</code></td>
+            <td><code>element.textContent = "Hello"</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>innerText</code></td>
+            <td>Gets or sets the visible text content of an element.</td>
+            <td>Yes (setter)</td>
+            <td><code>string</code></td>
+            <td><code>element.innerText = "Hello"</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. Node & Element Inspection Methods -->
+    <h2>🔎 Node & Element Inspection Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>parentNode</code></td>
+            <td>Gets the parent node of an element.</td>
+            <td>No</td>
+            <td><code>Node</code> or <code>null</code></td>
+            <td><code>element.parentNode</code></td>
+            <td><code>&lt;parent&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>parentElement</code></td>
+            <td>Gets the parent element of an element.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.parentElement</code></td>
+            <td><code>&lt;parent&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>childNodes</code></td>
+            <td>Gets all child nodes (including text and comments).</td>
+            <td>No</td>
+            <td><code>NodeList</code></td>
+            <td><code>element.childNodes</code></td>
+            <td><code>[Text, &lt;child&gt;]</code></td>
+          </tr>
+          <tr>
+            <td><code>children</code></td>
+            <td>Gets all child elements (excluding text and comments).</td>
+            <td>No</td>
+            <td><code>HTMLCollection</code></td>
+            <td><code>element.children</code></td>
+            <td><code>[&lt;child&gt;]</code></td>
+          </tr>
+          <tr>
+            <td><code>firstChild</code></td>
+            <td>Gets the first child node.</td>
+            <td>No</td>
+            <td><code>Node</code> or <code>null</code></td>
+            <td><code>element.firstChild</code></td>
+            <td><code>Text</code></td>
+          </tr>
+          <tr>
+            <td><code>lastChild</code></td>
+            <td>Gets the last child node.</td>
+            <td>No</td>
+            <td><code>Node</code> or <code>null</code></td>
+            <td><code>element.lastChild</code></td>
+            <td><code>Text</code></td>
+          </tr>
+          <tr>
+            <td><code>firstElementChild</code></td>
+            <td>Gets the first child element.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.firstElementChild</code></td>
+            <td><code>&lt;child&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>lastElementChild</code></td>
+            <td>Gets the last child element.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.lastElementChild</code></td>
+            <td><code>&lt;child&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>nextSibling</code></td>
+            <td>Gets the next sibling node.</td>
+            <td>No</td>
+            <td><code>Node</code> or <code>null</code></td>
+            <td><code>element.nextSibling</code></td>
+            <td><code>Text</code></td>
+          </tr>
+          <tr>
+            <td><code>previousSibling</code></td>
+            <td>Gets the previous sibling node.</td>
+            <td>No</td>
+            <td><code>Node</code> or <code>null</code></td>
+            <td><code>element.previousSibling</code></td>
+            <td><code>Text</code></td>
+          </tr>
+          <tr>
+            <td><code>nextElementSibling</code></td>
+            <td>Gets the next sibling element.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.nextElementSibling</code></td>
+            <td><code>&lt;sibling&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>previousElementSibling</code></td>
+            <td>Gets the previous sibling element.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.previousElementSibling</code></td>
+            <td><code>&lt;sibling&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>hasChildNodes()</code></td>
+            <td>Checks if an element has child nodes.</td>
+            <td>No</td>
+            <td><code>boolean</code></td>
+            <td><code>element.hasChildNodes()</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>matches(selector)</code></td>
+            <td>Checks if an element matches a CSS selector.</td>
+            <td>No</td>
+            <td><code>boolean</code></td>
+            <td><code>element.matches(".myClass")</code></td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>closest(selector)</code></td>
+            <td>Gets the closest ancestor matching a CSS selector.</td>
+            <td>No</td>
+            <td><code>Element</code> or <code>null</code></td>
+            <td><code>element.closest(".container")</code></td>
+            <td><code>&lt;div class="container"&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6. Event Handling Methods -->
+    <h2>🎯 Event Handling Methods</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method/Property</th>
+            <th>Description</th>
+            <th>Mutates DOM?</th>
+            <th>Returns</th>
+            <th>Example</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>addEventListener(type, listener)</code></td>
+            <td>Adds an event listener to an element.</td>
+            <td>No</td>
+            <td><code>undefined</code></td>
+            <td><code>element.addEventListener("click", () => {})</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>removeEventListener(type, listener)</code></td>
+            <td>Removes an event listener from an element.</td>
+            <td>No</td>
+            <td><code>undefined</code></td>
+            <td><code>element.removeEventListener("click", fn)</code></td>
+            <td><code>undefined</code></td>
+          </tr>
+          <tr>
+            <td><code>dispatchEvent(event)</code></td>
+            <td>Dispatches a custom event to an element.</td>
+            <td>No</td>
+            <td><code>boolean</code></td>
+            <td><code>element.dispatchEvent(new Event("click"))</code></td>
+            <td><code>true</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

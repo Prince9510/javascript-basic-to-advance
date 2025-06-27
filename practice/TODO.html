@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=., initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      height: 100vh;
+      /* width: 100%; */
+      flex-direction: column;
+      /* background-color: red; */
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    input {
+      margin-top: 10px;
+    }
+    .btn-submit {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: red;
+    }
+    .id {
+      display: none;
+    }
+    .div-inner {
+      width: 700px;
+      max-height: 300px;
+      overflow: auto;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+    td,
+    th {
+      word-break: break-word;
+      padding: 4px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <input class="name" type="text" placeholder="name" />
+      <input class="city" type="text" placeholder="city" />
+      <input class="age" type="number" placeholder="age" />
+      <input type="text" placeholder="id" class="id" />
+
+      <p class="warning"></p>
+      <button class="btn-submit" onclick="submitData()"></button>
+      <div class="div-inner">
+        <table border="1">
+          <tbody class="tbody">
+            <tr>
+              <th>ID</th>
+              <th>name</th>
+              <th>city</th>
+              <th>age</th>
+              <th colspan="2">action</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let nameInput = document.querySelector(".name");
+  let cityInput = document.querySelector(".city");
+  let ageInput = document.querySelector(".age");
+  let btn_submit = document.querySelector(".btn-submit");
+  let tbody = document.querySelector(".tbody");
+  let warning = document.querySelector(".warning");
+  let editBtn = document.querySelector(".edit-btn");
+  let deleteBtn = document.querySelector(".delete-btn");
+  var editIndex = false;
+  let id = document.querySelector(".id");
+
+  btn_submit.innerText = "SUBMIT";
+
+  function editData(e) {
+    let nameEdit =
+      e.parentElement.parentElement.querySelector(".nametd").innerText;
+    let cityEdit =
+      e.parentElement.parentElement.querySelector(".citytd").innerText;
+    let ageEdit =
+      e.parentElement.parentElement.querySelector(".agetd").innerText;
+    let idEdit = e.parentElement.parentElement.querySelector(".idtd").innerText;
+
+    nameInput.value = nameEdit;
+    cityInput.value = cityEdit;
+    ageInput.value = ageEdit;
+    id.value = idEdit;
+    btn_submit.innerText = "UPDADTE";
+    e.parentElement.parentElement.querySelector(".delete-btn").disabled = true;
+
+    editIndex = e;
+  }
+
+  function submitData(e) {
+    let name = nameInput.value;
+    let city = cityInput.value;
+    let age = ageInput.value;
+
+    if (editIndex) {
+      if (
+        nameInput.value == "" ||
+        cityInput.value == "" ||
+        ageInput.value == ""
+      ) {
+        console.log("please enter valid value");
+        warning.innerHTML = "please fill the all blanks";
+        return;
+      } else {
+        warning.innerHTML = "";
+      }
+
+      editIndex.parentElement.parentElement.querySelector(".nametd").innerText =
+        nameInput.value;
+      editIndex.parentElement.parentElement.querySelector(".citytd").innerText =
+        cityInput.value;
+      editIndex.parentElement.parentElement.querySelector(".agetd").innerText =
+        ageInput.value;
+
+      nameInput.value = "";
+      cityInput.value = "";
+      ageInput.value = "";
+      id.value = "";
+      btn_submit.innerText = "SUBMIT";
+
+      editIndex.parentElement.parentElement.querySelector(
+        ".delete-btn"
+      ).disabled = false;
+    } else {
+      if (
+        nameInput.value == "" ||
+        cityInput.value == "" ||
+        ageInput.value == ""
+      ) {
+        console.log("please enter valid value");
+        warning.innerHTML = "please fill the all blanks";
+        return;
+      } else {
+        warning.innerHTML = "";
+      }
+
+      let tr = document.createElement("tr");
+
+      let idtd = document.createElement("td");
+      idtd.classList.add("idtd");
+      idtd.innerHTML = Date.now();
+
+      let nametd = document.createElement("td");
+      nametd.classList.add("nametd");
+      nametd.innerHTML = name;
+
+      let citytd = document.createElement("td");
+      citytd.classList.add("citytd");
+      citytd.innerHTML = city;
+
+      let agetd = document.createElement("td");
+      agetd.classList.add("agetd");
+      agetd.innerHTML = age;
+
+      let editbtn = document.createElement("td");
+      editbtn.innerHTML = `<button class="edit-btn" onclick="editData(this)">EDIT</button>`;
+
+      let deletebtn = document.createElement("td");
+      deletebtn.innerHTML = `<button class="delete-btn" onclick="deleteData(this)">DELETE</button>`;
+
+      tr.appendChild(idtd);
+      tr.appendChild(nametd);
+      tr.appendChild(citytd);
+      tr.appendChild(agetd);
+      tr.appendChild(editbtn);
+      tr.appendChild(deletebtn);
+      tbody.appendChild(tr);
+
+      nameInput.value = "";
+      cityInput.value = "";
+      ageInput.value = "";
+    }
+    editIndex = false;
+    3;
+  }
+
+  function deleteData(e) {
+    e.parentElement.parentElement.remove();
+  }
+</script>

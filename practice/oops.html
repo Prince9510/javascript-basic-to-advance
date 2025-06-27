@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- sdfvsdf -->
+    <div class="test">
+      <!-- sdvsdfsd -->
+      <input type="text" placeholder="name" id="name" class="namein" />
+      <input type="number" placeholder="number" id="accountNumber" />
+      <input type="number" placeholder="balance" id="balance" />
+      <input type="number" placeholder="withdrawalLimit" id="withdrawalLimit" />
+      <input type="number" placeholder="depositLimit" id="depositLimit" />
+
+      <button id="btn" onclick="dataSubmit()">submit</button>
+      <button onclick="danger()" class="danger">bock</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  let nameInput = document.getElementById("name");
+  let accountNumberInput = document.getElementById("accountNumber");
+  let balanceInput = document.getElementById("balance");
+  let withdrawalLimitInput = document.getElementById("withdrawalLimit");
+  let depositLimitInput = document.getElementById("depositLimit");
+  let btn = document.getElementById("btn");
+  let danger = document.querySelector(".danger");
+  let data = [];
+
+  class BankAccount {
+    constructor(holderName, accountNumber, balance, id) {
+      this.accountNumber = accountNumber;
+      this.balance = balance;
+      this.holderName = holderName;
+      this.id = id;
+    }
+
+    getDetail() {
+      // return `name : ${this.holderName}\naccountNumber : ${this.accountNumber}\nbalance       : ${this.balance}`;
+      let obj = {
+        id: Date.now(),
+        name: this.holderName,
+        accountNumber: this.accountNumber,
+        balance: this.balance,
+      };
+      return obj;
+    }
+  }
+
+  class SavingAccount extends BankAccount {
+    constructor(
+      holderName,
+      accountNumber,
+      balance,
+      withdrawLimit,
+      depositLimit,
+      id
+    ) {
+      super(holderName, accountNumber, balance, id);
+      this.depositLimit = depositLimit;
+      this.withdrawLimit = withdrawLimit;
+    }
+
+    getLimit() {
+      // return `${this.getDetail()}\nyour withdrawal limit are : ${
+      //   this.withdrawLimit
+      // }\nyour depositLimit are : ${this.depositLimit}
+      // `;
+
+      let obj = {
+        ...this.getDetail(),
+        withdrawLimit: this.withdrawLimit,
+        depositLimit: this.depositLimit,
+      };
+      return obj;
+    }
+
+    getData() {
+      let stringifyData = localStorage.getItem("oops");
+      data = JSON.parse(stringifyData);
+
+      // return data;
+    }
+  }
+
+  function dataSubmit() {
+    var me = new SavingAccount(
+      nameInput.value,
+      accountNumberInput.value,
+      balanceInput.value,
+      withdrawalLimitInput.value,
+      depositLimitInput.value
+    );
+    console.log(me.getLimit());
+    let prevData = JSON.parse(localStorage.getItem("oops")) || [];
+    prevData.push(me.getLimit());
+    localStorage.setItem("oops", JSON.stringify(prevData));
+    console.log(data);
+    nameInput.focus();
+  }
+
+  let getDataFromLocalStorage = new SavingAccount();
+  getDataFromLocalStorage.getData();
+
+  // console.log("object", data);
+</script>

@@ -1,0 +1,7 @@
+
+first execute this command in vs code terminal.
+1) npm install -g json-server
+2) json-server --watch .\public\Data.json (to start json-server)
+3) if any error so run this command "npm i". 
+
+- open API.html with double click from file manager

@@ -13,30 +13,30 @@ Depositing money.
 Withdrawing money.
 Checking the balance after each transaction.*/
 
-class BankAccount{
-    constructor(holder,balance){
-        this.holder = holder
-        this.balance = balance
-    }
+class BankAccount {
+  constructor(holder, balance) {
+    this.holder = holder;
+    this.balance = balance;
+  }
 
-    deposit(amount){
-        this.balance += amount
-    }
+  deposit(amount) {
+    this.balance += amount;
+  }
 
-    withdraw(amount){
-        if(this.balance >= amount){
-            this.balance -= amount
-        }else{
-            console.log("Insufficient balance");
-        }
+  withdraw(amount) {
+    if (this.balance >= amount) {
+      this.balance -= amount;
+    } else {
+      console.log("Insufficient balance");
     }
+  }
 
-    showBalance(){
-        console.log(`${this.holder} Your balance is ${this.balance}`);
-    }
+  showBalance() {
+    console.log(`${this.holder} Your balance is ${this.balance}`);
+  }
 }
 
-const abc = new BankAccount("abc",1000)
-abc.deposit(5000)
-abc.withdraw(7000)
-abc.showBalance()
+const abc = new BankAccount("abc", 1000);
+abc.deposit(5000);
+abc.withdraw(1000);
+abc.showBalance();
