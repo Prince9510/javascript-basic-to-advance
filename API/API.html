@@ -33,12 +33,12 @@
             </div>
             <div class="style-input-label">
               <label for="">Phone</label>
-              <input type="text" placeholder="Phone" id="phone" />
+              <input type="number" placeholder="Phone" id="phone" />
               <p class="validation_error" id="phone_error"></p>
             </div>
             <div class="style-input-label">
               <label for="">Password</label>
-              <input type="text" placeholder="Password" id="password" />
+              <input type="password" placeholder="Password" id="password" />
               <p class="validation_error" id="password_error"></p>
             </div>
             <div class="style-input-label">
@@ -80,7 +80,7 @@
         <div class="table-div">
           <div class="search_filter">
             <div class="search-div">
-              <select name="" id="searchBy" onchange="findAndFilterData()">
+              <select name="" id="searchBy" onchange="searchData()">
                 <option value="name">name</option>
                 <option value="id">id</option>
                 <option value="email">email</option>

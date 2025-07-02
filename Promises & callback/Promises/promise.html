@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function userAPI() {
+    // fetch("https://jsonplaceholder.typicode.com/users/1")
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/users/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+
+  function todosAPI() {
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+
+  function photosAPI() {
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/photos/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+
+  function albumsAPI() {
+    // return fetch("https://jsonplaceholder.typicode.com/albums/1")
+    //   .then((res) => res.json())
+    //   .catch((err) => {
+    //     throw new Error(err);
+    //   });
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/albums/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+  function commentsAPI() {
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/comments/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+  function postsAPI() {
+    let api = new Promise((resolve, reject) => {
+      fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then((data) => {
+          resolve(data.json());
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+    return api;
+  }
+
+  //   userAPI()
+  //     .then((data) => {
+  //       console.log("data", data);
+  //       return todosAPI();
+  //     })
+  //     .then((todoData) => {
+  //       console.log("todoData", todoData);
+  //       return photosAPI();
+  //     })
+  //     .then((photoData) => {
+  //       console.log("photoData", photoData);
+  //       return albumsAPI();
+  //     })
+  //     .then((albumData) => {
+  //       console.log("albumData", albumData);
+  //       return commentsAPI();
+  //     })
+  //     .then((commentsData) => {
+  //       console.log("commentsData", commentsData);
+  //       return postsAPI();
+  //     })
+  //     .then((postData) => {
+  //       console.log("postData", postData);
+  //       //   return albumsAPI()
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+
+  p1 = new Promise((resolve, reject) => {
+    reject("p1");
+  });
+  p2 = new Promise((resolve, reject) => {
+    reject("p2");
+  });
+  p3 = new Promise((resolve, reject) => {
+    resolve("p3");
+  });
+
+  const a = Promise.allSettled([p1, p2, p3]).then((data) => console.log(data));
+  const b = Promise.all([
+    userAPI(),
+    todosAPI(),
+    photosAPI(),
+    albumsAPI(),
+    commentsAPI(),
+    postsAPI(),
+  ]).then((d) => console.log(d));
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      click the button and fetch api also after fetch first api data
+      automatically send to onther api.
+    </h2>
+    <p>just example of an Promises.</p>
+    <p>check console...</p>
+    <p id="p"></p>
+
+    <button onclick="fetchData()">FETCH DATA</button>
+  </body>
+</html>
+<script>
+  let btn = document.querySelector("button");
+  let p = document.getElementById("p");
+  if (p.innerText == "") {
+    p.style.display = "none";
+  } else {
+    p.style.display = "block";
+  }
+  async function fetchData() {
+    try {
+      let firstApiRowData = await fetch(
+        "https://jsonplaceholder.typicode.com/comments/10"
+      );
+      if (!firstApiRowData.ok) {
+        p.innerText = "404 Not Found";
+        p.style.color = "red";
+        p.style.display = "block";
+        return;
+      }
+      let finalData;
+      try {
+        finalData = await firstApiRowData.json();
+        console.log("this data are fetch successfully :\n", finalData);
+
+        p.innerText = "Data Fetching...";
+        p.style.display = "block";
+      } catch (err) {
+        console.log("objectsssssssssss", err);
+        p.innerText = err;
+        p.style.display = "block";
+        return;
+      }
+      //   p.innerText = "";
+
+      try {
+        let secondApi = await fetch(
+          "https://jsonplaceholder.typicode.com/comments",
+          {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+              body: finalData.body,
+              email: finalData.email,
+              name: finalData.name,
+            }),
+          }
+        );
+        if (!secondApi.ok) {
+          throw new Error("Failed to send data to second API");
+        }
+        let secondApiData = await secondApi.json();
+        p.innerText = "Data Send Successfully!";
+
+        if (!secondApiData) {
+          console.log("object", secondApiData);
+          p.style.color = "red";
+          p.innerText = "Data Not Send!";
+          p.style.display = "block";
+        } else {
+          console.log("this data are send successfully :\n", secondApiData);
+        }
+      } catch (err) {
+        p.style.color = "red";
+        p.innerText = "Error sending data to second API: " + err.message;
+        p.style.display = "block";
+        console.log(err);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell Example</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function userAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/users/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching user API")));
+  }
+
+  function todosAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching todo API")));
+  }
+
+  function photosAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/photos/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching photos API")));
+  }
+
+  function albumsAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/albums/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching albums API")));
+  }
+  function commentsAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/comments/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching comments API")));
+  }
+  function postsAPI(Callback) {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+      .then((res) => res.json())
+      .then((data) => Callback(null, data))
+      .catch((err) => Callback(new Error("problem fetching posts API")));
+  }
+
+  // Example callback function usage:
+  userAPI(function (err, user) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log("User:", user);
+    todosAPI(function (err, todos) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log("Todos:", todos);
+      photosAPI(function (err, photo) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("Photo:", photo);
+        albumsAPI(function (err, album) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          console.log("Album:", album);
+          commentsAPI(function (err, comments) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            console.log("Comments:", comments);
+            postsAPI(function (err, posts) {
+              if (err) {
+                console.error(err);
+                return;
+              }
+              console.log("Posts:", posts);
+            });
+          });
+        });
+      });
+    });
+  });
+</script>

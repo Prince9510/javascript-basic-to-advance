@@ -37,6 +37,10 @@ let pincodeValid = false;
 let mainData = [];
 let editIndex = null;
 
+let trr = document.getElementsByTagName("td");
+// The following line is invalid because trr is an HTMLCollection, not an element
+console.log(trr);
+
 // error message
 let name_error = document.getElementById("name_error");
 let email_error = document.getElementById("email_error");
@@ -48,6 +52,8 @@ citySelectTag.style.border = "0";
 citySelectTag.style.outline = "0";
 filter.style.gap = "0";
 mainLocationSelectTag.style.width = "100%";
+mainLocationSelectTag.style.display = "none";
+
 // addEventListener
 fetchPincode.addEventListener("click", getAddressFromPincode);
 close.addEventListener("click", extendsDiv);
@@ -55,6 +61,10 @@ myForm.addEventListener("submit", formSubmit);
 citySelectTag.addEventListener("change", mainFilterLocationData);
 
 // error functions
+
+function serverError() {
+  alert("json-server not start!");
+}
 
 function showError() {
   let isValid = true;
@@ -141,37 +151,41 @@ async function formSubmit(e) {
     editIndex = null;
     formSubmit_btn.innerText = "SUBMIT";
   } else {
-    let newID = Date.now();
-    // Always validate fields on submit
-    if (!showError()) {
-      return;
-    }
+    try {
+      let newID = Date.now();
+      // Always validate fields on submit
+      if (!showError()) {
+        return;
+      }
 
-    let s = await getAddressFromPincode();
-    if (!s) {
-      return;
-    }
-    console.log("object");
-    // debugger;
-    console.log("formSubmit called");
-    await fetch("http://localhost:3000/data", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        id: newID.toString(),
-        fullName: fullName.value,
-        email: email.value,
-        phone: phone.value,
-        password: password.value,
-        pincode: pincode.value,
-        location: `${cityLocation.value}, ${district.value}, ${state.value}, ${country.value}`,
-      }),
-    });
-    showData();
+      let s = await getAddressFromPincode();
+      if (!s) {
+        return;
+      }
+      console.log("object");
+      // debugger;
+      console.log("formSubmit called");
+      await fetch("http://localhost:3000/data", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id: newID.toString(),
+          fullName: fullName.value,
+          email: email.value,
+          phone: phone.value,
+          password: password.value,
+          pincode: pincode.value,
+          location: `${cityLocation.value}, ${district.value}, ${state.value}, ${country.value}`,
+        }),
+      });
+      showData();
 
-    editIndex = null;
+      editIndex = null;
+    } catch (err) {
+      serverError();
+    }
   }
   myForm.reset();
   locationsDiv.style.display = "none";
@@ -212,6 +226,7 @@ async function showData() {
     const response = await fetch("http://localhost:3000/data");
     const finalData = await response.json();
     mainData = finalData;
+    mainLocationSelectTag.style.display = "";
     // console.log(mainData);
   } catch (error) {
     console.log(error);
@@ -232,7 +247,7 @@ async function showData() {
                 <button class="edit-btn" onclick="fillDataInFormViaEdit(${e.id})">edit</button>
                 <button class="delete-btn" onclick="deleteData(${e.id})">delete</button>
               </td>
-              </tr>
+       </tr>
     `;
   });
   tbody.innerHTML = tr;
@@ -253,7 +268,7 @@ async function deleteData(deleteID) {
   }
 }
 
-function findAndFilterData(inputValue) {
+function searchData(inputValue) {
   console.log(searchBy.value);
   let indexofTd;
   if (searchBy.value == "id") {
@@ -291,7 +306,7 @@ function findAndFilterData(inputValue) {
 }
 
 searchInput.addEventListener("input", (e) => {
-  return findAndFilterData(e.target.value);
+  return searchData(e.target.value);
 });
 
 async function fillDataInFormViaEdit(ID) {
@@ -320,10 +335,10 @@ async function fillDataInFormViaEdit(ID) {
   }
 }
 
-document.addEventListener("keydown", function (event) {
-  if (event.ctrlKey && event.key === "Enter") {
+document.addEventListener("keydown", function (e) {
+  if (e.ctrlKey && e.key === "Enter") {
     extendsDiv();
-    event.preventDefault();
+    e.preventDefault();
   }
 });
 

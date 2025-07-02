@@ -1,14 +1,5 @@
 {
-  "data" : [
-      {
-      "fullName": "Anjali Mehta",
-      "email": "anjali.mehta@example.com",
-      "phone": "9876543211",
-      "password": "anjali2024",
-      "pincode": "122001",
-      "location": "Gurgaon, Haryana, India",
-      "id": "1751000000006"
-    },
+  "data": [
     {
       "fullName": "Rohan Desai",
       "email": "rohan.desai@example.com",
@@ -23,8 +14,8 @@
       "email": "meera.nair@example.com",
       "phone": "9988776654",
       "password": "meeranair",
-      "pincode": "682001",
-      "location": "Ernakulam, Kochi, Kerala, India",
+      "pincode": "400001",
+      "location": "Bazargate, Mumbai, Maharashtra, India",
       "id": "1751000000008"
     },
     {
@@ -42,7 +33,7 @@
       "phone": "9871234561",
       "password": "simran123",
       "pincode": "160017",
-      "location": "Sector 17, Chandigarh, India",
+      "location": "Chandigarh , Chandigarh, Chandigarh, India",
       "id": "1751000000010"
     },
     {
@@ -51,7 +42,7 @@
       "phone": "9812345678",
       "password": "vikasjain",
       "pincode": "302001",
-      "location": "Jaipur, Rajasthan, India",
+      "location": "Ashok Nagar (Jaipur), Jaipur, Rajasthan, India",
       "id": "1751000000011"
     },
     {
@@ -87,7 +78,7 @@
       "phone": "9001122336",
       "password": "sureshkumar",
       "pincode": "600001",
-      "location": "George Town, Chennai, Tamil Nadu, India",
+      "location": "Chennai , Chennai, Tamil Nadu, India",
       "id": "1751000000015"
     },
     {
@@ -114,7 +105,7 @@
       "phone": "9876543213",
       "password": "kavitasharma",
       "pincode": "201301",
-      "location": "Noida, Uttar Pradesh, India",
+      "location": "Noida, Gautam Buddha Nagar, Uttar Pradesh, India",
       "id": "1751000000018"
     },
     {
