@@ -12,7 +12,8 @@
     />
     <link rel="stylesheet" href="./footer.css">
     <link rel="stylesheet" href="./about.css">
-    <link rel="stylesheet" href="./header.css"> 
+    <link rel="stylesheet" href="./header.css">
+    <script src="./shared.js" defer></script> 
     
   </head>
   <body>
@@ -20,7 +21,7 @@
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <a href="index.html" class="logo">
+          <a href="./index.html" class="logo">
             <div class="logo-text">
               <img
                 src=".././images/logoo-Photoroom-transformed.png"
@@ -31,11 +32,11 @@
 
           <nav>
             <ul class="nav-menu" id="nav-menu">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#testimonials">Testimonials</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./testimonials.html">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
 
@@ -328,32 +329,6 @@
         </div>
       </footer>
 
-    <script>
-      function toggleMenu() {
-        const navMenu = document.getElementById("nav-menu");
-        navMenu.classList.toggle("active");
-      }
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", function (event) {
-        const navMenu = document.getElementById("nav-menu");
-        const mobileToggle = document.querySelector(".mobile-menu-toggle");
-
-        if (
-          !navMenu.contains(event.target) &&
-          !mobileToggle.contains(event.target)
-        ) {
-          navMenu.classList.remove("active");
-        }
-      });
-
-      // Close mobile menu when clicking on a navigation link
-      document.querySelectorAll(".nav-menu a").forEach((link) => {
-        link.addEventListener("click", function () {
-          const navMenu = document.getElementById("nav-menu");
-          navMenu.classList.remove("active");
-        });
-      });
-    </script>
+    <!-- Shared JavaScript is loaded via shared.js -->
   </body>
 </html>

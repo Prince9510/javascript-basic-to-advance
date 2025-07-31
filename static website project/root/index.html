@@ -14,13 +14,14 @@
 <link rel="stylesheet" href="./footer.css">
 <link rel="stylesheet" href="./index.css">
 <link rel="stylesheet" href="./header.css">
+<script src="./shared.js" defer></script>
     
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <a href="#" class="logo">
+          <a href="./index.html" class="logo">
             <div class="logo-text">
               <img src=".././images/logoo-Photoroom-transformed.png" alt="" />
             </div>
@@ -747,53 +748,6 @@
 
  
 
-    <script>
-      function toggleMenu() {
-        const navMenu = document.getElementById("nav-menu");
-        navMenu.classList.toggle("active");
-      }
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", function (event) {
-        const navMenu = document.getElementById("nav-menu");
-        const mobileToggle = document.querySelector(".mobile-menu-toggle");
-
-        if (
-          !navMenu.contains(event.target) &&
-          !mobileToggle.contains(event.target)
-        ) {
-          navMenu.classList.remove("active");
-        }
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const href = this.getAttribute("href");
-          const target = document.querySelector(href);
-
-          if (target) {
-            const headerHeight = document.querySelector(".header").offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight - 20; // Add some extra padding
-
-            window.scrollTo({
-              top: targetPosition,
-              behavior: "smooth",
-            });
-          } else {
-            console.warn(`Target element for ${href} not found`);
-          }
-        });
-      });
-
-      // Close mobile menu when clicking on a navigation link
-      document.querySelectorAll(".nav-menu a").forEach((link) => {
-        link.addEventListener("click", function () {
-          const navMenu = document.getElementById("nav-menu");
-          navMenu.classList.remove("active");
-        });
-      });
-    </script>
+    <!-- Shared JavaScript is loaded via shared.js -->
   </body>
 </html>
