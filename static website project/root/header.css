@@ -1,0 +1,223 @@
+/* CSS Variables */
+:root {
+    --primary-blue: #0a2463;
+    --accent-blue: #3e92cc;
+    --light-blue: #e3f2fd;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --text-gray: #666666;
+    --bg-white: #ffffff;
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+  }
+
+
+.header {
+    background: var(--bg-white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: var(--primary-blue);
+  }
+
+  .logo-text img {
+    width: 100px;
+    height: 100px;
+    /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.119); */
+  }
+
+  .logo-text .dr {
+    font-size: 32px;
+  }
+
+  .logo-text .london {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--accent-blue);
+    font-weight: 500;
+    font-size: 16px;
+    transition: var(--transition);
+  }
+
+  .nav-menu a:hover {
+    color: var(--primary-blue);
+  }
+
+  .cta-button {
+    background: var(--primary-blue);
+    color: var(--text-light);
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+  }
+
+  .cta-button:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    z-index: 1001;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-blue);
+    margin: 3px 0;
+    transition: var(--transition);
+    border-radius: 2px;
+  }
+
+
+  @media (max-width: 768px) {
+    .header-content {
+      position: relative;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--bg-white);
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      gap: 15px;
+      border-radius: 0 0 12px 12px;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .nav-menu li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(62, 146, 204, 0.1);
+      font-size: 16px;
+    }
+
+    .nav-menu a:hover {
+      background: var(--light-blue);
+      border-radius: 8px;
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 32px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .features h2,
+    .services-section h2 {
+      font-size: 28px;
+    }
+
+    .features-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials h2 {
+      font-size: 28px;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .earth-graphic {
+      width: 80px;
+      height: 80px;
+      font-size: 18px;
+    }
+  }
+
+  /* Animations */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

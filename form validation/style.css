@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.register_box{
+    height: fit-content;
+    width: 500px;
+    padding: 20px;
+    background-color: rgba(0, 238, 255, 0.179);
+}
+.label_input_combo{
+    /* background-color: red; */
+    height: fit-content;
+    margin-top: 10px;
+}
+.label_input_combo label{
+    font-size: 11px;
+    display: block;
+}
+.label_input_combo input{
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    padding-left: 10px;
+    width: 100%;
+}
+
+
+form input{
+    outline-color: rgba(0, 0, 0, 0.344);
+}
+
+.inputAll_error{
+    display: none;
+    font-size: 11px;
+    color: red;
+}
+.signIn{
+    font-size: 12px;
+    /* text-decoration: none; */
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.register_button{
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: rgb(92, 184, 92);
+    border: 0;
+    color: white;
+    /* display: none; */
+}

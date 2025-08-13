@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./footer.css" />
+    <link rel="stylesheet" href="./service.css" />
+    <link rel="stylesheet" href="./header.css" />
+    <script src="./shared.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="./index.html" class="logo">
+            <div class="logo-text">
+              <img src=".././images/logoo-Photoroom-transformed.png" alt="" />
+            </div>
+          </a>
+          <nav>
+            <ul class="nav-menu" id="nav-menu">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./testimonials.html">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <button class="mobile-menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section (keep as is) -->
+      <section class="service-hero">
+        <div class="container service-hero-flex">
+          <div class="service-hero-text">
+            <h1>Our Services</h1>
+            <p class="service-hero-desc">
+              Discover how Dr London Med Strategix empowers professionals with
+              end-to-end career, relocation, and development services. We guide
+              you every step of the way—locally and globally.
+            </p>
+          </div>
+          <div class="service-hero-image">
+            <img src="../images/s1.jpg" alt="Healthcare Services" />
+          </div>
+        </div>
+      </section>
+      <!-- Services Timeline Section -->
+      <section class="services-timeline">
+        <div class="container">
+          <h2>What We Offer</h2>
+          <span class="services-header-underline"></span>
+          <div class="timeline-container">
+            <div class="timeline-item">
+              <div class="timeline-icon">🧑‍⚕️</div>
+              <div class="timeline-content">
+                <h3>Personalized Career Roadmaps</h3>
+                <p>
+                  Tailored guidance for every healthcare professional's journey,
+                  from students to senior consultants.
+                </p>
+                <div class="service-features">
+                  <span>1:1 career strategy sessions</span>
+                  <span>Specialty selection & progression planning</span>
+                  <span>Mentorship matching</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">🌐</div>
+              <div class="timeline-content">
+                <h3>Global Mobility & Relocation</h3>
+                <p>
+                  Expert support for international placements, licensing, and
+                  smooth relocation for you and your family.
+                </p>
+                <div class="service-features">
+                  <span>Visa & immigration assistance</span>
+                  <span
+                    >Country-specific licensing (NMC, GMC, AHPRA, etc.)</span
+                  >
+                  <span>Relocation logistics & cultural integration</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">📄</div>
+              <div class="timeline-content">
+                <h3>Professional Branding</h3>
+                <p>
+                  Stand out with a compelling CV, cover letter, and digital
+                  presence tailored for healthcare recruiters.
+                </p>
+                <div class="service-features">
+                  <span>ATS-optimized CVs & cover letters</span>
+                  <span>LinkedIn & portfolio setup</span>
+                  <span>Personal statement coaching</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">🎤</div>
+              <div class="timeline-content">
+                <h3>Interview & Exam Mastery</h3>
+                <p>
+                  Ace your interviews and exams with mock sessions, feedback,
+                  and specialty-specific coaching.
+                </p>
+                <div class="service-features">
+                  <span>Live mock interviews</span>
+                  <span>IELTS/OET & clinical exam prep</span>
+                  <span>Specialty panel coaching</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">🚀</div>
+              <div class="timeline-content">
+                <h3>Continuous Professional Development</h3>
+                <p>
+                  Grow your career with accredited courses, CPD modules, and
+                  leadership workshops.
+                </p>
+                <div class="service-features">
+                  <span>CPD-accredited training</span>
+                  <span>Leadership & management workshops</span>
+                  <span>Clinical skills refreshers</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon">🤝</div>
+              <div class="timeline-content">
+                <h3>Ongoing Support & Community</h3>
+                <p>
+                  Access a supportive network, exclusive resources, and ongoing
+                  guidance throughout your career.
+                </p>
+                <div class="service-features">
+                  <span>Private community access</span>
+                  <span>Resource library & webinars</span>
+                  <span>Alumni networking events</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Overview Section -->
+      <section class="services-overview">
+        <div class="container">
+          <h2>Our Services Overview</h2>
+          <span class="services-header-underline"></span>
+          <div class="services-overview-grid">
+            <div class="service-card">
+              <div class="service-card-icon">🧑‍⚕️</div>
+              <h3>Career Development</h3>
+              <p>
+                Personalized planning, role matching, and application support for healthcare professionals in the UK and abroad.
+              </p>
+              <ul>
+                <li>Career planning & role matching</li>
+                <li>CV & cover letter creation</li>
+                <li>Application & interview coaching</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">🌍</div>
+              <h3>Global Mobility</h3>
+              <p>
+                Comprehensive visa, licensing, and relocation support for seamless international transitions.
+              </p>
+              <ul>
+                <li>Visa & immigration services</li>
+                <li>Licensing & registration (NMC, HCPC, AHPRA)</li>
+                <li>Relocation & cultural integration</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">💬</div>
+              <h3>Interview & Exam Prep</h3>
+              <p>
+                One-on-one coaching, live mock interviews, and specialty-focused feedback to help you succeed.
+              </p>
+              <ul>
+                <li>Mock interviews & coaching</li>
+                <li>IELTS/OET & clinical exam prep</li>
+                <li>Panel & specialty guidance</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">📄</div>
+              <h3>Professional Branding</h3>
+              <p>
+                Stand out with ATS-optimized CVs, tailored cover letters, and a strong digital presence.
+              </p>
+              <ul>
+                <li>CV & cover letter writing</li>
+                <li>LinkedIn & portfolio setup</li>
+                <li>Personal statement coaching</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">🚀</div>
+              <h3>Continuous Development</h3>
+              <p>
+                Accredited courses, CPD modules, and leadership workshops for ongoing professional growth.
+              </p>
+              <ul>
+                <li>CPD-accredited training</li>
+                <li>Leadership & management workshops</li>
+                <li>Clinical skills refreshers</li>
+              </ul>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">🤝</div>
+              <h3>Support & Community</h3>
+              <p>
+                Access a supportive network, exclusive resources, and ongoing guidance throughout your career.
+              </p>
+              <ul>
+                <li>Private community access</li>
+                <li>Resource library & webinars</li>
+                <li>Alumni networking events</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Our Approach -->
+      <section class="about-approach">
+        <div class="container">
+          <div class="approach-content">
+            <div class="approach-text">
+              <h2>Our Approach</h2>
+              <p>
+                We believe in a personalized, comprehensive approach to
+                healthcare career development. Our team combines industry
+                expertise with a deep understanding of global healthcare systems
+                to provide you with the best possible guidance.
+              </p>
+              <div class="approach-features">
+                <div class="approach-feature">
+                  <span class="feature-icon">🎯</span>
+                  <div>
+                    <h4>Personalized Strategy</h4>
+                    <p>
+                      Every plan is tailored to your specific goals and
+                      background
+                    </p>
+                  </div>
+                </div>
+                <div class="approach-feature">
+                  <span class="feature-icon">🌍</span>
+                  <div>
+                    <h4>Global Expertise</h4>
+                    <p>Deep knowledge of healthcare systems worldwide</p>
+                  </div>
+                </div>
+                <div class="approach-feature">
+                  <span class="feature-icon">📈</span>
+                  <div>
+                    <h4>Proven Results</h4>
+                    <p>
+                      Track record of successful placements and career growth
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="approach-image">
+              <img src="../images/services.jpg" alt="Our Approach" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Process Flow Section -->
+    </main>
+    <!-- Footer Include -->
+     <br><br>
+    <footer class="footer">
+      
+        <div class="container">
+          <div class="footer-content">
+            <!-- Company Info -->
+            <div class="footer-section">
+              <div class="footer-logo">
+                <img
+                  src=".././images/logoo-Photoroom-transformed.png"
+                  alt="Dr London Med Strategix Logo"
+                />
+                <div class="footer-logo-text">
+                  <h3>Dr London Med Strategix</h3>
+                  <p>
+                    Your Comprehensive Partner in Healthcare Careers & Mobility
+                  </p>
+                </div>
+              </div>
+              <p class="footer-description">
+                Empowering healthcare professionals with personalized career
+                guidance, professional development, and global mobility solutions.
+              </p>
+              <div class="footer-social">
+                <a href="#" class="social-link" aria-label="WhatsApp">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Email">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Phone">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+  
+            <!-- Services -->
+            <div class="footer-section">
+              <h4>Our Services</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="index.html#services">Job Guidance in Healthcare</a>
+                </li>
+                <li>
+                  <a href="index.html#services">Professional CV Creation</a>
+                </li>
+                <li>
+                  <a href="index.html#services"
+                    >Healthcare Training & Certification</a
+                  >
+                </li>
+                <li><a href="index.html#services">Interview Preparation</a></li>
+                <li>
+                  <a href="index.html#services">Global Visa & Immigration</a>
+                </li>
+                <li><a href="index.html#services">Relocation Support</a></li>
+              </ul>
+            </div>
+  
+            <!-- Contact Info -->
+            <div class="footer-section">
+              <h4>Contact Information</h4>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                  <div>
+                    <p>123 Health St, London, UK</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    />
+                  </svg>
+                  <div>
+                    <p>+44 (0)20 12345678</p>
+                    <p>+44 7769056159</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    />
+                  </svg>
+                  <div>
+                    <p>info@medstrategix.co.uk</p>
+                    <p>info@drlondonlab.co.uk</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Footer Bottom -->
+          <div class="footer-bottom">
+            <div class="footer-bottom-content">
+              <p>&copy; 2025 Dr London Med Strategix. All rights reserved.</p>
+              <div class="footer-bottom-links">
+                <a href="index.html#contact">Privacy Policy</a>
+                <a href="index.html#contact">Terms of Service</a>
+                <a href="index.html#contact">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </footer>
+  </body>
+</html>
