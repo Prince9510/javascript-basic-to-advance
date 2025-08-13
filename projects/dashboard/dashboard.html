@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- <h1>dashboard</h1> -->
+    <div class="container">
+      <header>
+        <div class="header_part_1">
+          <!-- <h2>DASHBAORD</h2> -->
+          <img src="../Images/logo-BdcmceyV.svg" alt="" />
+        </div>
+        <div class="header_part_2">
+          <button class="corusesBTNContainer">
+            COURSES
+            <i class="ri-vip-crown-line"></i>
+          </button>
+
+          <button class="homeBTNContainer">
+            HOME
+            <i class="ri-vip-crown-line"></i>
+          </button>
+
+          <div class="wallet_container">
+            <div class="balance">
+              <span id="myBalance"></span>
+              <span id="balanceLoader"></span>
+            </div>
+            <div class="wallet"><span>Wallet</span></div>
+          </div>
+
+          <div class="circle">
+            <i class="ri-user-line"></i>
+          </div>
+
+          <!-- <div class="circle" id="bar"> -->
+          <!-- </div> -->
+
+          <div class="userInfo">
+            <div class="infoContainer">
+              <i class="ri-profile-line"></i>
+              <span>Profile</span>
+            </div>
+            <div class="infoContainer">
+              <i class="ri-group-line"></i>
+              <span>Users</span>
+            </div>
+            <div class="infoContainer">
+              <i class="ri-settings-line"></i>
+              <span>Settings</span>
+            </div>
+            <div class="infoContainer" id="logoutContainer">
+              <i id="logout" class="ri-logout-box-r-line"></i>
+              <span id="logoutSpan">Logout</span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="dashboardDataContainerPerent">
+      <div class="showDataContainers">
+        <div class="data" id="data1">
+          <div class="detail">
+            <div class="showNumbers">
+              <h1 id="totalEarning"></h1>
+              <span>Total Earning</span>
+            </div>
+            <div class="showImage">
+              <i class="ri-money-dollar-circle-line"></i>
+            </div>
+          </div>
+          <div class="text_container">
+            <span>10% changes on profit</span>
+          </div>
+        </div>
+        <div class="data" id="data4">
+          <div class="detail">
+            <div class="showNumbers">
+              <h1 id="usersCountReferralByYou"></h1>
+              <span>Your Team</span>
+            </div>
+            <div class="showImage"><i class="ri-thumb-up-line"></i></div>
+          </div>
+          <div class="text_container">
+            <span>Referral By You</span>
+          </div>
+        </div>
+
+        <div class="data" id="data3">
+          <div class="detail">
+            <div class="showNumbers">
+              <h1 id="purchasedProduct"></h1>
+              <span>Purchased Product</span>
+            </div>
+            <div class="showImage"><i class="ri-file-list-line"></i></div>
+          </div>
+          <div class="text_container">
+            <span>Your Purchased Product</span>
+          </div>
+        </div>
+        <div class="data" id="data2">
+          <div class="detail">
+            <div class="showNumbers">
+              <h1 id="activeUsersReferralByYou"></h1>
+
+              <span>Active User</span>
+            </div>
+            <div class="showImage"><i class="ri-calendar-line"></i></div>
+          </div>
+          <div class="text_container">
+            <span>Users can buy atleast one products</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboardDataSkeletonLoader">
+        <div class="dashboardLoader" id="dashboardLoader1">
+          <div class="detailLoader">
+            <div class="showNumbersLoader">
+              <span></span>
+            </div>
+          </div>
+          <div class="text_container_loader">
+            <span></span>
+          </div>
+        </div>
+        <div class="dashboardLoader" id="dashboardLoader4">
+          <div class="detailLoader">
+            <div class="showNumbersLoader">
+              <span></span>
+            </div>
+          </div>
+          <div class="text_container_loader">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="dashboardLoader" id="dashboardLoader3">
+          <div class="detailLoader">
+            <div class="showNumbersLoader">
+              <span></span>
+            </div>
+          </div>
+          <div class="text_container_loader">
+            <span></span>
+          </div>
+        </div>
+        <div class="dashboardLoader" id="dashboardLoader2">
+          <div class="detailLoader">
+            <div class="showNumbersLoader">
+              <span></span>
+            </div>
+          </div>
+          <div class="text_container_loader">
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="historyContainer">
+        <div class="commsionContainer">
+          <div class="container-title credited-title">
+            Credited Transactions
+          </div>
+          <div class="credited-list">
+            <div class="credited-item">
+              <span class="credited-name">John Doe</span>
+              <span class="credited-amount">+ ₹1,200</span>
+            </div>
+            <div class="credited-item">
+              <span class="credited-name">Jane Smith</span>
+              <span class="credited-amount">+ ₹850</span>
+            </div>
+          </div>
+        </div>
+        <div class="spendContainer">
+          <div class="container-title debited-title">Debited Transactions</div>
+          <div class="debited-list">
+            <div class="debited-item">
+              <span class="debited-name">Online Course</span>
+              <span class="debited-amount">- ₹800</span>
+            </div>
+          
+          </div>
+        </div>
+
+        <div class="commsionContainerLoader">
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+        </div>
+        <div class="spendContainerLoader">
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+          <div class="innerContentLoader"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product_container">
+      <div class="products"></div>
+
+      <div class="skeletonLoader">
+        <div class="card loading">
+          <div class="image"></div>
+          <div class="content">
+            <h4></h4>
+            <div class="description"></div>
+          </div>
+        </div>
+        <div class="card loading">
+          <div class="image"></div>
+          <div class="content">
+            <h4></h4>
+            <div class="description"></div>
+          </div>
+        </div>
+        <div class="card loading">
+          <div class="image"></div>
+          <div class="content">
+            <h4></h4>
+            <div class="description"></div>
+          </div>
+        </div>
+        <div class="card loading">
+          <div class="image"></div>
+          <div class="content">
+            <h4></h4>
+            <div class="description"></div>
+          </div>
+        </div>
+        <div class="card loading">
+          <div class="image"></div>
+          <div class="content">
+            <h4></h4>
+            <div class="description"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ///////////////////////////////////////////// history //////////////////////////////////////////////// -->
+
+    <!-- ,,,,,,,,,,,,,,,,, -->
+    <div class="buyConditionContainer">
+      <div class="buyCondition">
+        <button class="noBTN" type="button">CANCEL</button>
+        <button class="yesBTN" type="button">BUY</button>
+      </div>
+    </div>
+    <div class="error_container">
+      <div class="error">
+        <span id="error_text"></span>
+      </div>
+      <div class="close_error_container">
+        <i class="ri-close-large-line"></i>
+      </div>
+    </div>
+    <div class="loaderPerent" id="loaderPerentDiv">
+      <div id="loader"></div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

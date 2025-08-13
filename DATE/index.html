@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Date Object Cheatsheet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        margin-top: 40px;
+      }
+
+      h3 {
+        color: #2980b9;
+        margin-top: 30px;
+      }
+
+      .table-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+
+      tr:hover {
+        background: #e6f3ff;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        background: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+        color: #c7254e;
+      }
+
+      @media (max-width: 600px) {
+        .table-container {
+          grid-template-columns: 1fr;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📅 JavaScript Date Object Cheatsheet</h1>
+
+    <h2>🚀 Creating Date Objects (Constructors)</h2>
+    <p>
+      The <code>Date</code> object is used to work with dates and times. A new
+      instance is created using the <code>new Date()</code> constructor.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Syntax</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>new Date()</code></td>
+            <td>Creates a date object with the current date and time.</td>
+          </tr>
+          <tr>
+            <td><code>new Date(milliseconds)</code></td>
+            <td>
+              Creates a date object from milliseconds since the UNIX Epoch (Jan
+              1, 1970).
+            </td>
+          </tr>
+          <tr>
+            <td><code>new Date(dateString)</code></td>
+            <td>
+              Creates a date object from a date string (e.g., "2025-08-12").
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code
+                >new Date(year, monthIndex, day, hours, minutes, seconds,
+                ms)</code
+              >
+            </td>
+            <td>
+              Creates a date object with the specified date and time components.
+              Note: <code>monthIndex</code> is 0-11.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>📥 Getter Methods (Get Date Components)</h2>
+    <p>
+      These methods retrieve information from a date object. They return values
+      based on the user's local time zone.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+            <th>Return Value Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>getFullYear()</code></td>
+            <td>Gets the 4-digit year.</td>
+            <td><code>2025</code></td>
+          </tr>
+          <tr>
+            <td><code>getMonth()</code></td>
+            <td>Gets the month (<strong>0-11</strong>; January is 0).</td>
+            <td><code>7</code> (for August)</td>
+          </tr>
+          <tr>
+            <td><code>getDate()</code></td>
+            <td>Gets the day of the month (1-31).</td>
+            <td><code>12</code></td>
+          </tr>
+          <tr>
+            <td><code>getDay()</code></td>
+            <td>
+              Gets the day of the week (<strong>0-6</strong>; Sunday is 0).
+            </td>
+            <td><code>2</code> (for Tuesday)</td>
+          </tr>
+          <tr>
+            <td><code>getHours()</code></td>
+            <td>Gets the hour (0-23).</td>
+            <td><code>10</code></td>
+          </tr>
+          <tr>
+            <td><code>getMinutes()</code></td>
+            <td>Gets the minute (0-59).</td>
+            <td><code>42</code></td>
+          </tr>
+          <tr>
+            <td><code>getSeconds()</code></td>
+            <td>Gets the second (0-59).</td>
+            <td><code>55</code></td>
+          </tr>
+          <tr>
+            <td><code>getMilliseconds()</code></td>
+            <td>Gets the millisecond (0-999).</td>
+            <td><code>123</code></td>
+          </tr>
+          <tr>
+            <td><code>getTime()</code></td>
+            <td>Gets the number of milliseconds since the UNIX Epoch.</td>
+            <td><code>1754985175000</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>📤 Setter Methods (Set Date Components)</h2>
+    <p>
+      These methods are used to set parts of a date in an existing date object.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>setFullYear(year, [month], [day])</code></td>
+            <td>Sets the 4-digit year.</td>
+          </tr>
+          <tr>
+            <td><code>setMonth(monthIndex, [day])</code></td>
+            <td>Sets the month (0-11).</td>
+          </tr>
+          <tr>
+            <td><code>setDate(day)</code></td>
+            <td>Sets the day of the month (1-31).</td>
+          </tr>
+          <tr>
+            <td><code>setHours(hour, [min], [sec], [ms])</code></td>
+            <td>Sets the hour (0-23).</td>
+          </tr>
+          <tr>
+            <td><code>setMinutes(min, [sec], [ms])</code></td>
+            <td>Sets the minute (0-59).</td>
+          </tr>
+          <tr>
+            <td><code>setSeconds(sec, [ms])</code></td>
+            <td>Sets the second (0-59).</td>
+          </tr>
+          <tr>
+            <td><code>setMilliseconds(ms)</code></td>
+            <td>Sets the millisecond (0-999).</td>
+          </tr>
+          <tr>
+            <td><code>setTime(milliseconds)</code></td>
+            <td>Sets the date using milliseconds since the UNIX Epoch.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>🔄 Conversion & String Methods</h2>
+    <p>
+      These methods convert a date object into a more readable string format.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>toString()</code></td>
+            <td>Returns the full date as a string.</td>
+          </tr>
+          <tr>
+            <td><code>toDateString()</code></td>
+            <td>Returns the date portion as a human-readable string.</td>
+          </tr>
+          <tr>
+            <td><code>toTimeString()</code></td>
+            <td>Returns the time portion as a human-readable string.</td>
+          </tr>
+          <tr>
+            <td><code>toLocaleString()</code></td>
+            <td>
+              Returns the full date as a string, formatted for the local region
+              (e.g., 12/8/2025, 10:42:55 am).
+            </td>
+          </tr>
+          <tr>
+            <td><code>toLocaleDateString()</code></td>
+            <td>
+              Returns the date portion as a string, formatted for the local
+              region (e.g., 12/8/2025).
+            </td>
+          </tr>
+          <tr>
+            <td><code>toLocaleTimeString()</code></td>
+            <td>
+              Returns the time portion as a string, formatted for the local
+              region (e.g., 10:42:55 am).
+            </td>
+          </tr>
+          <tr>
+            <td><code>toISOString()</code></td>
+            <td>
+              Returns the date in ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ).
+            </td>
+          </tr>
+          <tr>
+            <td><code>toUTCString()</code></td>
+            <td>
+              Returns the date as a string, formatted according to the UTC time
+              standard.
+            </td>
+          </tr>
+          <tr>
+            <td><code>toJSON()</code></td>
+            <td>
+              Returns a string in ISO format, suitable for JSON serialization.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>⚡ Static Methods</h2>
+    <p>
+      These methods are called directly on the <code>Date</code> class itself,
+      not on an instance.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Date.now()</code></td>
+            <td>
+              Returns the number of milliseconds since the UNIX Epoch (same as
+              <code>new Date().getTime()</code>).
+            </td>
+          </tr>
+          <tr>
+            <td><code>Date.parse(dateString)</code></td>
+            <td>
+              Parses a date string and returns the milliseconds since the UNIX
+              Epoch.
+            </td>
+          </tr>
+          <tr>
+            <td><code>Date.UTC(year, monthIndex, ...)</code></td>
+            <td>
+              Accepts date components and returns the milliseconds since the
+              UNIX Epoch, assuming UTC.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

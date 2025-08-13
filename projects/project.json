@@ -1,0 +1,168 @@
+{
+  "users": [
+    {
+      "id": "1753098620396",
+      "name": "Prince Satasiya",
+      "email": "satasiyaprince9510@gmail.com",
+      "phone": "+91 8160636847",
+      "password": "Prince@123",
+      "referralById": null,
+      "timestamp": "1753675918108",
+      "balance": "7389.71",
+      "totalEarning": "21339.42",
+      "usersCountReferralByYou": "4",
+      "purchasedProduct": "19",
+      "active": true,
+      "activeUsersReferralByYou": "2"
+    },
+    {
+      "id": "1753100643168",
+      "name": "Prince Satasiya",
+      "email": "aaa@gmail.com",
+      "phone": "+91 5160636521",
+      "password": "Prince@123",
+      "referralById": "1753098620396",
+      "timestamp": "1753616838330",
+      "balance": "437002",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "27",
+      "active": true,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1753442156549",
+      "name": "abc",
+      "email": "admin1@gmail.com",
+      "phone": "+91 4545454545",
+      "password": "Prince@123",
+      "referralById": "1753098620396",
+      "timestamp": "1753442156549",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "1",
+      "active": true,
+      "activeUsersReferralByYou": "0"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1752661606203",
+      "courseName": "Artificial Intelligence",
+      "description": "Learn the fundamentals and applications of Artificial Intelligence, including neural networks, natural language processing, and computer vision.",
+      "validity": "12 months",
+      "courseImage": "../Images/ai.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 1000,
+      "courseReferralBonus": 10
+    },
+    {
+      "id": "1752661606548",
+      "courseName": "App Development",
+      "description": "Master mobile app development for Android and iOS using modern frameworks and tools. Build, test, and deploy real-world apps.",
+      "validity": "12 months",
+      "courseImage": "../Images/app.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 2000,
+      "courseReferralBonus": 8
+    },
+    {
+      "id": "1752661606204",
+      "courseName": "Web Development",
+      "description": "Become a full-stack web developer. Learn HTML, CSS, JavaScript, backend technologies, and deployment.",
+      "validity": "12 months",
+      "courseImage": "../Images/web.jpg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 3000,
+      "courseReferralBonus": 7
+    },
+    {
+      "id": "1752661606205",
+      "courseName": "Data Science",
+      "description": "Explore data analysis, visualization, and machine learning with Python. Work on real datasets and projects.",
+      "validity": "12 months",
+      "courseImage": "../Images/data.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 4000,
+      "courseReferralBonus": 12
+    },
+    {
+      "id": "1752661606206",
+      "courseName": "Digital Marketing",
+      "description": "Learn SEO, SEM, social media marketing, and analytics to grow your business or career online.",
+      "validity": "12 months",
+      "courseImage": "../Images/digital.jpg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 5000,
+      "courseReferralBonus": 6
+    },
+    {
+      "id": "1752661606207",
+      "courseName": "Video Editing",
+      "description": "Edit professional videos using industry-standard tools. Covers basics to advanced editing techniques.",
+      "validity": "12 months",
+      "courseImage": "../Images/editing.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 6000,
+      "courseReferralBonus": 5
+    },
+    {
+      "id": "1752661606208",
+      "courseName": "Graphic Design",
+      "description": "Learn graphic design principles, tools, and techniques to create stunning visuals for web and print.",
+      "validity": "12 months",
+      "courseImage": "../Images/graphic.jpg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 7000,
+      "courseReferralBonus": 7
+    },
+    {
+      "id": "1752661606209",
+      "courseName": "Game Development",
+      "description": "Design and develop games using popular engines. Covers game mechanics, graphics, and publishing.",
+      "validity": "12 months",
+      "courseImage": "../Images/game.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 14999,
+      "courseReferralBonus": 9
+    },
+    {
+      "id": "1752661306210",
+      "courseName": "Machine Learning",
+      "description": "Dive deep into machine learning algorithms, model building, and deployment with hands-on projects.",
+      "validity": "12 months",
+      "courseImage": "../Images/machine.jpeg",
+      "buyersId": [
+        "1753098620396",
+        "1753100643168"
+      ],
+      "price": 19999,
+      "courseReferralBonus": 20
+    }
+  ]
+}

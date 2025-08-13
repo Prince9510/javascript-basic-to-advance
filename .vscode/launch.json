@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/satas/Downloads/javascript/Promises & callback/Promises",
-      "program": "c:/Users/satas/Downloads/javascript/Promises & callback/Promises/build/Debug/outDebug",
+      "cwd": "c:/Users/satas/Downloads/javascript/OOPs/pillers",
+      "program": "c:/Users/satas/Downloads/javascript/OOPs/pillers/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

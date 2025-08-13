@@ -382,6 +382,7 @@ td {
 }
 .table-div tr:nth-child(even) {
     background: #f1f7fa;
+    /* background: red; */
 }
 .table-div tr:hover {
     background: #e3f6e8;
@@ -429,4 +430,12 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
+}
+#action{
+    width: 150px;
+    /* background-color: red; */
+}
+
+#ac{
+    width: 150px;
 }

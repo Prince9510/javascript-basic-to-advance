@@ -1,0 +1,286 @@
+{
+  "users": [
+    {
+      "id": "1721049600000",
+      "name": "wertyu",
+      "email": "sss@sss.s",
+      "phone": "+91 1234567890",
+      "password": "sss@123",
+      "referralById": "1721049600000",
+      "timestamp": "1721049600000",
+      "balance": "5000000",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721136000000",
+      "name": "wertyu",
+      "email": "satasiyaprince9510@gmail.com",
+      "phone": "+91 8160636847",
+      "password": "Prince@123",
+      "referralById": "1721049600000",
+      "timestamp": "1753073423172",
+      "balance": "500000",
+      "totalEarning": "2500000",
+      "usersCountReferralByYou": "50",
+      "purchasedProduct": "10",
+      "active": false,
+      "activeUsersReferralByYou": "39"
+    },
+    {
+      "id": "1721222400000",
+      "name": "wertyu",
+      "email": "abc2@gmail.com",
+      "phone": "+91 1234567898",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721222400000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721308800000",
+      "name": "wertyu",
+      "email": "abwwc2@gmail.com",
+      "phone": "+91 1245678903",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721308800000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721395200000",
+      "name": "wertyu",
+      "email": "absdc2@gmail.com",
+      "phone": "+91 1234567456",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721395200000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721481600000",
+      "name": "wertyu",
+      "email": "abc2@gmail.com",
+      "phone": "+91 1212121212",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721481600000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721568000000",
+      "name": "wertyu",
+      "email": "abc2@gmail.com",
+      "phone": "+91 3232323232",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721568000000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721654400000",
+      "name": "wertyu",
+      "email": "abc2@gmail.com",
+      "phone": "+91 4578458548",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721654400000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1721740800000",
+      "name": "wertyu",
+      "email": "abc2@gmail.com",
+      "phone": "+91 1265656565",
+      "password": "Prince@123",
+      "referralById": "1721136000000",
+      "timestamp": "1721740800000",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1752751694233",
+      "name": "wertyu",
+      "email": "abcccc2@gmail.com",
+      "phone": "+91 3212121212",
+      "password": "Prince@123",
+      "referralById": "1752573020801",
+      "timestamp": "1752751694233",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1752752449095",
+      "name": "ABC ",
+      "email": "XYZ@gmail.com",
+      "phone": "+91 7852125956",
+      "password": "Prince@123",
+      "referralById": "1721654400000",
+      "timestamp": "1752752449095",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    },
+    {
+      "id": "1752814663041",
+      "name": "wertyu",
+      "email": "abcasdfv2@gmail.com",
+      "phone": "+91 4545454545",
+      "password": "Prince@123",
+      "referralById": "1721049600000",
+      "timestamp": "1752814663041",
+      "balance": "0",
+      "totalEarning": "0",
+      "usersCountReferralByYou": "0",
+      "purchasedProduct": "0",
+      "active": false,
+      "activeUsersReferralByYou": "0"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1752661606203",
+      "courseName": "Artificial Intelligence",
+      "description": "Learn the fundamentals and applications of Artificial Intelligence, including neural networks, natural language processing, and computer vision.",
+      "validity": "12 months",
+      "courseImage": "../Images/ai.jpeg",
+      "buyersId": [
+        
+      ],
+      "price": 4999,
+      "courseReferralBonus": 10
+    },
+    {
+      "id": "1752661606548",
+      "courseName": "App Development",
+      "description": "Master mobile app development for Android and iOS using modern frameworks and tools. Build, test, and deploy real-world apps.",
+      "validity": "12 months",
+      "courseImage": "../Images/app.jpeg",
+      "buyersId": [
+      ],
+      "price": 3999,
+      "courseReferralBonus": 8
+    },
+    {
+      "id": "1752661606204",
+      "courseName": "Web Development",
+      "description": "Become a full-stack web developer. Learn HTML, CSS, JavaScript, backend technologies, and deployment.",
+      "validity": "12 months",
+      "courseImage": "../Images/web.jpg",
+      "buyersId": [
+      ],
+      "price": 3499,
+      "courseReferralBonus": 7
+    },
+    {
+      "id": "1752661606205",
+      "courseName": "Data Science",
+      "description": "Explore data analysis, visualization, and machine learning with Python. Work on real datasets and projects.",
+      "validity": "12 months",
+      "courseImage": "../Images/data.jpeg",
+      "buyersId": [
+      ],
+      "price": 5999,
+      "courseReferralBonus": 12
+    },
+    {
+      "id": "1752661606206",
+      "courseName": "Digital Marketing",
+      "description": "Learn SEO, SEM, social media marketing, and analytics to grow your business or career online.",
+      "validity": "12 months",
+      "courseImage": "../Images/digital.jpg",
+      "buyersId": [
+      ],
+      "price": 2999,
+      "courseReferralBonus": 6
+    },
+    {
+      "id": "1752661606207",
+      "courseName": "Video Editing",
+      "description": "Edit professional videos using industry-standard tools. Covers basics to advanced editing techniques.",
+      "validity": "12 months",
+      "courseImage": "../Images/editing.jpeg",
+      "buyersId": [
+      ],
+      "price": 2499,
+      "courseReferralBonus": 5
+    },
+    {
+      "id": "1752661606208",
+      "courseName": "Graphic Design",
+      "description": "Learn graphic design principles, tools, and techniques to create stunning visuals for web and print.",
+      "validity": "12 months",
+      "courseImage": "../Images/graphic.jpg",
+      "buyersId": [
+      ],
+      "price": 2999,
+      "courseReferralBonus": 7
+    },
+    {
+      "id": "1752661606209",
+      "courseName": "Game Development",
+      "description": "Design and develop games using popular engines. Covers game mechanics, graphics, and publishing.",
+      "validity": "12 months",
+      "courseImage": "../Images/game.jpeg",
+      "buyersId": [
+      ],
+      "price": 4499,
+      "courseReferralBonus": 9
+    },
+    {
+      "id": "1752661306210",
+      "courseName": "Machine Learning",
+      "description": "Dive deep into machine learning algorithms, model building, and deployment with hands-on projects.",
+      "validity": "12 months",
+      "courseImage": "../Images/machine.jpeg",
+      "buyersId": [
+      ],
+      "price": 5499,
+      "courseReferralBonus": 11
+    }
+  ]
+}

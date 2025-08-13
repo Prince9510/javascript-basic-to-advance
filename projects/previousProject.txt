@@ -1,0 +1,8 @@
+1) in script some time use the 'var' keyword instead of 'let' and 'const' for variable declaration, so it's give bugs in code.
+2) most of time use direct access a DOM element instead of store in variable.
+3) in direct access of DOM element so access it's value like 'document.getElementById("id").value' so after need element only not
+   it's value so rewrite the code and one more time access only element like this 'document.getElementById("id")'.
+4) In Form validation use only " name == '' ", it means user enter multiple space so data are fill and break validation also and form submit successfully.
+5) In form validation use 'innerHTML' instead of 'innterText' also don't need to use 'innerHTML'.
+6) In edit functionality give a option to edit an 'ID' so change the 'ID' and click submit button so give internal error 500.
+7) All task edit to only static page because use public api, but in id it's update direct in api that reason it's throw error.

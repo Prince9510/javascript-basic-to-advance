@@ -23,23 +23,22 @@ let fetchPincode = document.getElementById("fetchPincode");
 let validation_error = document.querySelector(".validation_error");
 let searchBy = document.getElementById("searchBy");
 let searchInput = document.getElementById("searchInput");
-let tableRow = document.querySelector("tbody");
 let theadtr = document.querySelector("thead tr");
 let emailtd = document.querySelectorAll(".emailtd");
 let filter = document.querySelector(".filter");
 let mainLocationSelectTag = document.getElementById("mainLocationSelectTag");
-let citySelectTag = document.getElementById("citySelectTag");
+let secondSelectTag = document.getElementById("secondSelectTag");
 let filterLocationData = [];
-console.log("objectobjectobjectobject", emailtd);
-let child = tableRow.children;
+let child = tbody.children;
+
 let expands = null;
 let pincodeValid = false;
 let mainData = [];
 let editIndex = null;
 
-let trr = document.getElementsByTagName("td");
-// The following line is invalid because trr is an HTMLCollection, not an element
-console.log(trr);
+// let trr = document.getElementsByTagName("td");
+// // The following line is invalid because trr is an HTMLCollection, not an element
+// console.log(trr);
 
 // error message
 let name_error = document.getElementById("name_error");
@@ -47,9 +46,9 @@ let email_error = document.getElementById("email_error");
 let phone_error = document.getElementById("phone_error");
 let password_error = document.getElementById("password_error");
 let pincode_error = document.getElementById("pincode_error");
-citySelectTag.style.width = "0";
-citySelectTag.style.border = "0";
-citySelectTag.style.outline = "0";
+secondSelectTag.style.width = "0";
+secondSelectTag.style.border = "0";
+secondSelectTag.style.outline = "0";
 filter.style.gap = "0";
 mainLocationSelectTag.style.width = "100%";
 mainLocationSelectTag.style.display = "none";
@@ -58,7 +57,7 @@ mainLocationSelectTag.style.display = "none";
 fetchPincode.addEventListener("click", getAddressFromPincode);
 close.addEventListener("click", extendsDiv);
 myForm.addEventListener("submit", formSubmit);
-citySelectTag.addEventListener("change", mainFilterLocationData);
+secondSelectTag.addEventListener("change", mainFilterLocationData);
 
 // error functions
 
@@ -100,6 +99,7 @@ async function getAddressFromPincode() {
       locationJSON = finalData[0].PostOffice[0];
       pincode_error.style.display = "none";
     } else {
+      locationsDiv.style.display = "none";
       pincode_error.style.display = "block";
       pincode_error.innerText = "Invalid pincode.";
       return false;
@@ -194,7 +194,7 @@ async function formSubmit(e) {
 
 function extendsDiv() {
   if (expands) {
-    console.log("objectssssssssssssssssssss");
+    // console.log("objectssssssssssssssssssss");
     table_div.style.width = "950px";
     table_div.backgroundColor = "red";
     table_div.style.height = "520px";
@@ -208,7 +208,7 @@ function extendsDiv() {
     expands = false;
   } else {
     input_div.style.display = "none";
-    console.log("ccccccccccccccccccccc");
+    // console.log("ccccccccccccccccccccc");
     table_div.style.width = "1500px";
     // table_div.style.height = "";
     shadow_div.style.height = "520px";
@@ -243,7 +243,7 @@ async function showData() {
               <td>${e.password}</td>
               <td>${e.pincode}</td>
               <td>${e.location}</td>
-              <td>
+              <td id="ac">
                 <button class="edit-btn" onclick="fillDataInFormViaEdit(${e.id})">edit</button>
                 <button class="delete-btn" onclick="deleteData(${e.id})">delete</button>
               </td>
@@ -273,13 +273,13 @@ function searchData(inputValue) {
   let indexofTd;
   if (searchBy.value == "id") {
     indexofTd = 0;
-    searchInput.placeholder = "search by id";
+    searchInput.placeholder = "last 4 digits";
   } else if (searchBy.value == "name") {
     indexofTd = 1;
-    searchInput.placeholder = "search by name";
+    searchInput.placeholder = "name";
   } else if (searchBy.value == "email") {
     indexofTd = 2;
-    searchInput.placeholder = "search by email";
+    searchInput.placeholder = "email";
   }
   // console.log("call ");
   let filter = (inputValue || "").toLowerCase();
@@ -337,6 +337,7 @@ async function fillDataInFormViaEdit(ID) {
 
 document.addEventListener("keydown", function (e) {
   if (e.ctrlKey && e.key === "Enter") {
+    console.log(e);
     extendsDiv();
     e.preventDefault();
   }
@@ -357,6 +358,8 @@ async function filterData() {
 
     // console.log("removeDuplicates", removeDuplicates);
 
+    // console.log("removeDuplicates", removeDuplicates);
+
     // let splitLocation = removeDuplicates.map((e, i) => {
 
     // });
@@ -366,6 +369,8 @@ async function filterData() {
 
     for (let key of removeDuplicates) {
       let a = key.split(",");
+      console.log(key);
+      // console.log(key.split(","));
       area.push(a[0]);
       city.push(a[1]);
       state.push(a[2]);
@@ -413,26 +418,38 @@ async function attchFilter() {
         let val = this.value;
         if (val == "select") {
           showData();
-          // citySelectTag.classList.add = "noneCitySelectTag";
-          citySelectTag.style.width = "0";
-          citySelectTag.style.border = "0";
-          citySelectTag.style.outline = "0";
+          // secondSelectTag.classList.add = "nonesecondSelectTag";
+          secondSelectTag.style.width = "0";
+          secondSelectTag.style.border = "0";
+          secondSelectTag.style.outline = "0";
           filter.style.gap = "0";
           mainLocationSelectTag.style.width = "100%";
         } else {
-          citySelectTag.style.width = "50%";
-          citySelectTag.style.border = "1px solid black";
-          citySelectTag.style.outline = "0";
+          showData();
+          secondSelectTag.style.width = "50%";
+          secondSelectTag.style.border = "1px solid black";
+          secondSelectTag.style.outline = "0";
           filter.style.gap = "10px";
           mainLocationSelectTag.style.width = "50%";
         }
-        // citySelectTag.style.width = "150px";
+        // secondSelectTag.style.width = "150px";
         if (val == "area") {
           let options = obj.area
             .map((key) => `<option value="${key}">${key}</option>`)
             .join("");
 
-          citySelectTag.innerHTML = `
+          // console.log("sdddddddddddddddddddddddddddddddd", obj.area);
+
+          console.log(
+            "debuggggg",
+            obj.area
+              .map((e) => {
+                return console.log(e);
+              })
+              .join("")
+          );
+
+          secondSelectTag.innerHTML = `
         <option value="select">Select</option>
         ${options}
     `;
@@ -443,7 +460,7 @@ async function attchFilter() {
             .map((key) => `<option value="${key}">${key}</option>`)
             .join("");
 
-          citySelectTag.innerHTML = `
+          secondSelectTag.innerHTML = `
         <option value="select">Select</option>
         ${options}
     `;
@@ -452,7 +469,7 @@ async function attchFilter() {
             .map((key) => `<option value="${key}">${key}</option>`)
             .join("");
 
-          citySelectTag.innerHTML = `
+          secondSelectTag.innerHTML = `
         <option value="select">Select</option>
         ${options}
     `;
@@ -475,6 +492,9 @@ function mainFilterLocationData() {
   // console.log("filter1750828523767", filter);
   // console.log(inputValue);
   // console.log(tableRow);
+
+  // console.log("child iiiiiiiiiiii", child);
+
   let td, tdValue;
   for (let i = 0; i < child.length; i++) {
     // const d = child[i];
@@ -491,3 +511,8 @@ function mainFilterLocationData() {
     }
   }
 }
+jyare server close hoy tyare "empty data" no message shadow nathi kravyo
+
+edit btn click karya pachi ej data delete kri nakhi to pachi submit uper click karvathi error ave che. 
+
+unusable code remove nathi krelo.

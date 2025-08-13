@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Event Listeners Cheatsheet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        margin-top: 40px;
+      }
+
+      h3 {
+        color: #2980b9;
+        margin-top: 30px;
+      }
+
+      .table-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background: #3498db;
+        color: white;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+
+      tr:hover {
+        background: #e6f3ff;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        background: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+        color: #c7254e;
+      }
+
+      @media (max-width: 600px) {
+        .table-container {
+          grid-template-columns: 1fr;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Event Listeners Cheatsheet</h1>
+
+    <h2>👂 Common Event Listeners</h2>
+    <p>
+      Events are actions that happen in the system you are programming. The
+      system fires a signal when an event occurs, allowing you to run code in
+      response. Here are some of the most common events.
+    </p>
+
+    <h3>🖱️ Mouse Events</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Key Event Properties</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>click</code></td>
+            <td>Fires when the user clicks on an element.</td>
+            <td>
+              <code>clientX</code>, <code>clientY</code>, <code>button</code>,
+              <code>target</code>
+            </td>
+            <td><code>element.addEventListener('click', (e) => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>dblclick</code></td>
+            <td>Fires when the user double-clicks on an element.</td>
+            <td>
+              <code>clientX</code>, <code>clientY</code>, <code>button</code>,
+              <code>target</code>
+            </td>
+            <td>
+              <code>element.addEventListener('dblclick', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mousedown</code></td>
+            <td>Fires when a user presses a mouse button over an element.</td>
+            <td><code>button</code></td>
+            <td>
+              <code>element.addEventListener('mousedown', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mouseup</code></td>
+            <td>Fires when a user releases a mouse button over an element.</td>
+            <td><code>button</code></td>
+            <td>
+              <code>element.addEventListener('mouseup', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mousemove</code></td>
+            <td>Fires when the mouse pointer is moving over an element.</td>
+            <td><code>clientX</code>, <code>clientY</code></td>
+            <td>
+              <code>element.addEventListener('mousemove', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mouseover</code></td>
+            <td>
+              Fires when the pointer moves onto an element or its children.
+            </td>
+            <td><code>relatedTarget</code></td>
+            <td>
+              <code>element.addEventListener('mouseover', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mouseout</code></td>
+            <td>
+              Fires when the pointer moves out of an element or its children.
+            </td>
+            <td><code>relatedTarget</code></td>
+            <td>
+              <code>element.addEventListener('mouseout', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mouseenter</code></td>
+            <td>
+              Fires when the pointer moves onto an element. (Does not bubble).
+            </td>
+            <td><code>relatedTarget</code></td>
+            <td>
+              <code>element.addEventListener('mouseenter', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>mouseleave</code></td>
+            <td>
+              Fires when the pointer moves out of an element. (Does not bubble).
+            </td>
+            <td><code>relatedTarget</code></td>
+            <td>
+              <code>element.addEventListener('mouseleave', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>contextmenu</code></td>
+            <td>Fires on right-click to open a context menu.</td>
+            <td><code>preventDefault()</code></td>
+            <td>
+              <code>element.addEventListener('contextmenu', (e) => {});</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>⌨️ Keyboard Events</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Key Event Properties</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>keydown</code></td>
+            <td>Fires when a key is pressed down.</td>
+            <td>
+              <code>key</code>, <code>code</code>, <code>ctrlKey</code>,
+              <code>shiftKey</code>
+            </td>
+            <td>
+              <code>document.addEventListener('keydown', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>keyup</code></td>
+            <td>Fires when a key is released.</td>
+            <td>
+              <code>key</code>, <code>code</code>, <code>ctrlKey</code>,
+              <code>shiftKey</code>
+            </td>
+            <td><code>document.addEventListener('keyup', (e) => {});</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>📝 Form & Input Events</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Key Event Properties</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>submit</code></td>
+            <td>Fires when a <code>&lt;form&gt;</code> is submitted.</td>
+            <td><code>target</code>, <code>preventDefault()</code></td>
+            <td><code>form.addEventListener('submit', (e) => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>input</code></td>
+            <td>
+              Fires when the value of an <code>&lt;input&gt;</code>,
+              <code>&lt;select&gt;</code>, or
+              <code>&lt;textarea&gt;</code> changes.
+            </td>
+            <td><code>target.value</code>, <code>data</code></td>
+            <td><code>inputEl.addEventListener('input', (e) => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>change</code></td>
+            <td>
+              Fires when the value is committed (e.g., after losing focus).
+            </td>
+            <td><code>target.value</code></td>
+            <td>
+              <code>selectEl.addEventListener('change', (e) => {});</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>focus</code></td>
+            <td>Fires when an element receives focus.</td>
+            <td><code>target</code></td>
+            <td><code>inputEl.addEventListener('focus', (e) => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>blur</code></td>
+            <td>Fires when an element loses focus.</td>
+            <td><code>target</code></td>
+            <td><code>inputEl.addEventListener('blur', (e) => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>invalid</code></td>
+            <td>Fires when an input fails validation.</td>
+            <td><code>target</code></td>
+            <td>
+              <code>inputEl.addEventListener('invalid', (e) => {});</code>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>🌐 Window & Document Events</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Event Type</th>
+            <th>Description</th>
+            <th>Target</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>DOMContentLoaded</code></td>
+            <td>Fires when the HTML has loaded, before images and CSS.</td>
+            <td><code>document</code></td>
+            <td>
+              <code
+                >document.addEventListener('DOMContentLoaded', () => {});</code
+              >
+            </td>
+          </tr>
+          <tr>
+            <td><code>load</code></td>
+            <td>Fires when the whole page and all resources have loaded.</td>
+            <td><code>window</code></td>
+            <td><code>window.addEventListener('load', () => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>scroll</code></td>
+            <td>Fires when the document view or an element is scrolled.</td>
+            <td><code>document</code> or <code>element</code></td>
+            <td><code>window.addEventListener('scroll', () => {});</code></td>
+          </tr>
+          <tr>
+            <td><code>resize</code></td>
+            <td>Fires when the browser window is resized.</td>
+            <td><code>window</code></td>
+            <td><code>window.addEventListener('resize', () => {});</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

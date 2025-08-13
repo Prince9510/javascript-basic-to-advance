@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1></h1>
+      <input type="number" disabled class="inputArea" />
+
+      <div class="buttonContainer">
+        <button onclick="clearInput()" class="allClear">CE</button>
+        <button class="back" onclick="back()">
+          <i class="ri-delete-back-2-line"></i>
+        </button>
+        <button class="numbers" onclick="numberClick('/')" value="/">/</button>
+        <button class="numbers" onclick="numberClick(7)" value="7">7</button>
+        <button class="numbers" onclick="numberClick(8)" value="8">8</button>
+        <button class="numbers" onclick="numberClick(9)" value="9">9</button>
+        <button class="numbers" onclick="numberClick('*')" value="*">X</button>
+        <button class="numbers" onclick="numberClick(4)" value="4">4</button>
+        <button class="numbers" onclick="numberClick(5)" value="5">5</button>
+        <button class="numbers" onclick="numberClick(6)" value="6">6</button>
+        <button class="numbers" onclick="numberClick('-')" value="-">-</button>
+        <button class="numbers" onclick="numberClick(1)" value="1">1</button>
+        <button class="numbers" onclick="numberClick(2)" value="2">2</button>
+        <button class="numbers" onclick="numberClick(3)" value="3">3</button>
+        <button class="numbers" onclick="numberClick('+')" value="+">+</button>
+        <button class="numbers" onclick="numberClick(0)" value="0">0</button>
+        <button class="numbers" onclick="numberClick('00')" value="00">00</button>
+        <button onclick="ansClick()">=</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

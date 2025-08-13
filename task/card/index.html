@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wallte_container">
+      <div class="balance_container">
+        <div class="balance">
+          <span class="myBlanace"></span>
+        </div>
+        <div class="wallet">
+          <span class="addAmountBTN" onclick="addAmount()">DEPOSITE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- <div class="card">
+        <div class="numberDiv">
+          <h1 class="num">10</h1>
+        </div>
+        <div class="suitDiv">
+          <h1 class="suit">♠</h1>
+        </div>
+        <div class="numberDiv" id="num2">
+          <h1 class="num">10</h1>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="multiplyer">
+      <div class="profit_amount">
+        <span>Profit : </span>
+        <span class="profit"></span>
+      </div>
+      <div class="next_multiplyer">
+        <span>For Next : </span>
+        <span class="multiplyer_number"></span>
+      </div>
+    </div>
+
+    <div class="guess_btn">
+      <button class="high" onclick="bet('high')">HIGH</button>
+      <button class="low" onclick="bet('low')">LOW</button>
+    </div>
+
+    <div class="game_start">
+      <input class="bet_amount" placeholder="enter BET amount" type="text" />
+      <button class="shuffleBTN" onclick="showAllDeckInScreen()">BET</button>
+    </div>
+
+    <button class="cashout_btn" onclick="cashout()">CASHOUT</button>
+
+    <script src="card.js"></script>
+  </body>
+</html>
