@@ -1,0 +1,928 @@
+{
+  "users": [
+    {
+      "id": "1755512400867",
+      "name": "Prince Satasiya",
+      "email": "satasiyaprince9510@gmail.com",
+      "phone": "+91 0816063684",
+      "password": "Prince@123",
+      "timestamp": "1755593945048",
+      "quizStatus": {
+        "status": true,
+        "questionIndex": 6
+      }
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What kind of aircraft was developed by Igor Sikorsky in the United States in 1942?",
+      "correct_answer": "Helicopter",
+      "incorrect_answers": [
+        "Stealth Blimp",
+        "Jet",
+        "Space Capsule"
+      ],
+      "id": "a47c"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "When someone is cowardly, they are said to have what color belly?",
+      "correct_answer": "Yellow",
+      "incorrect_answers": [
+        "Green",
+        "Red",
+        "Blue"
+      ],
+      "id": "20de"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the Zodiac symbol for Gemini?",
+      "correct_answer": "Twins",
+      "incorrect_answers": [
+        "Fish",
+        "Scales",
+        "Maiden"
+      ],
+      "id": "93c5"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What machine element is located in the center of fidget spinners?",
+      "correct_answer": "Bearings",
+      "incorrect_answers": [
+        "Axles",
+        "Gears",
+        "Belts"
+      ],
+      "id": "a1a6"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What was the first ever London Underground line to be built?",
+      "correct_answer": "Metropolitan Line",
+      "incorrect_answers": [
+        "Circle Line",
+        "Bakerloo Line",
+        "Victoria Line"
+      ],
+      "id": "0070"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What does a funambulist walk on?",
+      "correct_answer": "A Tight Rope",
+      "incorrect_answers": [
+        "Broken Glass",
+        "Balls",
+        "The Moon"
+      ],
+      "id": "31a5"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the name of the antagonist group in Danganronpa Another Episode: Ultra Despair Girls?",
+      "correct_answer": "Warriors of Hope",
+      "incorrect_answers": [
+        "The Monokubs",
+        "Warriors of Despair",
+        "The Ultimate Despair"
+      ],
+      "id": "cedc"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What company developed the vocaloid Hatsune Miku?",
+      "correct_answer": "Crypton Future Media",
+      "incorrect_answers": [
+        "Sega",
+        "Sony",
+        "Yamaha Corporation"
+      ],
+      "id": "c9a5"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "According to the nursery rhyme, what fruit did Little Jack Horner pull out of his Christmas pie?",
+      "correct_answer": "Plum",
+      "incorrect_answers": [
+        "Apple",
+        "Peach",
+        "Pear"
+      ],
+      "id": "61fb"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the famous Papa John&#039;s last name?",
+      "correct_answer": "Schnatter",
+      "incorrect_answers": [
+        "Chowder",
+        "Williams",
+        "ANDERSON"
+      ],
+      "id": "b16c"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of these holidays is NOT usually celebrated in the month of December?",
+      "correct_answer": "Thanksgiving",
+      "incorrect_answers": [
+        "Christmas",
+        "Kwanzaa",
+        "Hanukkah"
+      ],
+      "id": "d441"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What do the letters in the GMT time zone stand for?",
+      "correct_answer": "Greenwich Mean Time",
+      "incorrect_answers": [
+        "Global Meridian Time",
+        "General Median Time",
+        "Glasgow Man Time"
+      ],
+      "id": "f7e0"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "The drug cartel run by Pablo Escobar originated in which South American city?",
+      "correct_answer": "Medell&iacute;n",
+      "incorrect_answers": [
+        "Bogot&aacute;",
+        "Quito",
+        "Cali"
+      ],
+      "id": "ceb8"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What element has the chemical symbol Kr?",
+      "correct_answer": "Krypton",
+      "incorrect_answers": [
+        "Kerosine",
+        "Kineticium",
+        "Curium"
+      ],
+      "id": "abeb"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the Spanish word for &quot;donkey&quot;?",
+      "correct_answer": "Burro",
+      "incorrect_answers": [
+        "Caballo",
+        "Toro",
+        "Perro"
+      ],
+      "id": "668b"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which sign of the zodiac is represented by the Crab?",
+      "correct_answer": "Cancer",
+      "incorrect_answers": [
+        "Libra",
+        "Virgo",
+        "Sagittarius"
+      ],
+      "id": "2833"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Area 51 is located in which US state?",
+      "correct_answer": "Nevada",
+      "incorrect_answers": [
+        "Arizona",
+        "New Mexico",
+        "Utah"
+      ],
+      "id": "6f18"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?",
+      "correct_answer": "Demolition",
+      "incorrect_answers": [
+        "The Dream Team",
+        "The Bushwhackers",
+        "The British Bulldogs"
+      ],
+      "id": "4ac1"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "In aerodynamics, which force pushes an object upwards?",
+      "correct_answer": "Lift",
+      "incorrect_answers": [
+        "Drag",
+        "Weight",
+        "Thrust"
+      ],
+      "id": "64fe"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Of the following months, which has the most amount of days?",
+      "correct_answer": "December",
+      "incorrect_answers": [
+        "April",
+        "September",
+        "November "
+      ],
+      "id": "c693"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "How tall is the Burj Khalifa?",
+      "correct_answer": "2,722 ft",
+      "incorrect_answers": [
+        "2,717 ft",
+        "2,546 ft",
+        "3,024 ft"
+      ],
+      "id": "c393"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of the following is not the host of a program on NPR?",
+      "correct_answer": "Ben Shapiro",
+      "incorrect_answers": [
+        "Terry Gross",
+        "Ira Glass",
+        "Peter Sagal"
+      ],
+      "id": "a223"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which one of these is not a typical European sword design?",
+      "correct_answer": "Scimitar",
+      "incorrect_answers": [
+        "Falchion",
+        "Ulfberht",
+        "Flamberge"
+      ],
+      "id": "fd35"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What company developed the vocaloid Hatsune Miku?",
+      "correct_answer": "Crypton Future Media",
+      "incorrect_answers": [
+        "Sega",
+        "Sony",
+        "Yamaha Corporation"
+      ],
+      "id": "06ef"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What does a funambulist walk on?",
+      "correct_answer": "A Tight Rope",
+      "incorrect_answers": [
+        "Broken Glass",
+        "Balls",
+        "The Moon"
+      ],
+      "id": "32d7"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of the following card games revolves around numbers and basic math?",
+      "correct_answer": "Uno",
+      "incorrect_answers": [
+        "Go Fish",
+        "Twister",
+        "Munchkin"
+      ],
+      "id": "9890"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "When was the website reddit founded ?",
+      "correct_answer": "2005",
+      "incorrect_answers": [
+        "2008",
+        "2004",
+        "2006"
+      ],
+      "id": "a3f0"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of these holidays is NOT usually celebrated in the month of December?",
+      "correct_answer": "Thanksgiving",
+      "incorrect_answers": [
+        "Christmas",
+        "Kwanzaa",
+        "Hanukkah"
+      ],
+      "id": "5148"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What are Panama hats made out of?",
+      "correct_answer": "Straw",
+      "incorrect_answers": [
+        "Silk",
+        "Hemp",
+        "Flax"
+      ],
+      "id": "42ed"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Who is the youngest person to receive a Nobel Prize?",
+      "correct_answer": "Malala Yousafzai",
+      "incorrect_answers": [
+        "Lawrence Bragg",
+        "Werner Heisenberg",
+        "Yasser Arafat"
+      ],
+      "id": "e224"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "According to Sherlock Holmes, &quot;If you eliminate the impossible, whatever remains, however improbable, must be the...&quot;",
+      "correct_answer": "Truth",
+      "incorrect_answers": [
+        "Answer",
+        "Cause",
+        "Source"
+      ],
+      "id": "2a3e"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "The buried remains of which English explorer of Australia were found in London  in January 2019? ",
+      "correct_answer": "Matthew Flinders",
+      "incorrect_answers": [
+        "William Bourke",
+        "Abel Tasman",
+        "Dirk Hartog"
+      ],
+      "id": "4e5f"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What nuts are used in the production of marzipan?",
+      "correct_answer": "Almonds",
+      "incorrect_answers": [
+        "Peanuts",
+        "Walnuts",
+        "Pistachios"
+      ],
+      "id": "1c59"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "When was the website reddit founded ?",
+      "correct_answer": "2005",
+      "incorrect_answers": [
+        "2008",
+        "2004",
+        "2006"
+      ],
+      "id": "54f4"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which company did Valve cooperate with in the creation of the Vive?",
+      "correct_answer": "HTC",
+      "incorrect_answers": [
+        "Oculus",
+        "Google",
+        "Razer"
+      ],
+      "id": "2c84"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which best selling toy of 1983 caused hysteria, resulting in riots breaking out in stores?",
+      "correct_answer": "Cabbage Patch Kids",
+      "incorrect_answers": [
+        "Transformers",
+        "Care Bears",
+        "Rubik&rsquo;s Cube"
+      ],
+      "id": "8321"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of these Marvel games was released on the Playstation 2?",
+      "correct_answer": "Spider-Man 2",
+      "incorrect_answers": [
+        "Silver Surfer",
+        "Howard the Duck",
+        "Wolverine: Adamantium Rage"
+      ],
+      "id": "a903"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "How would one say goodbye in Spanish?",
+      "correct_answer": "Adi&oacute;s",
+      "incorrect_answers": [
+        " Hola",
+        "Au Revoir",
+        "Salir"
+      ],
+      "id": "11cb"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What alcoholic drink is made from molasses?",
+      "correct_answer": "Rum",
+      "incorrect_answers": [
+        "Gin",
+        "Vodka",
+        "Whisky"
+      ],
+      "id": "db38"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What element has the chemical symbol Kr?",
+      "correct_answer": "Krypton",
+      "incorrect_answers": [
+        "Kerosine",
+        "Kineticium",
+        "Curium"
+      ],
+      "id": "7df9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "The buried remains of which English explorer of Australia were found in London  in January 2019? ",
+      "correct_answer": "Matthew Flinders",
+      "incorrect_answers": [
+        "William Bourke",
+        "Abel Tasman",
+        "Dirk Hartog"
+      ],
+      "id": "9889"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which one of the following rhythm games was made by Harmonix?",
+      "correct_answer": "Rock Band",
+      "incorrect_answers": [
+        "Meat Beat Mania",
+        "Guitar Hero Live",
+        "Dance Dance Revolution"
+      ],
+      "id": "a732"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "The Canadian $1 coin is colloquially known as a what?",
+      "correct_answer": "Loonie",
+      "incorrect_answers": [
+        "Boolie",
+        "Foolie",
+        "Moodie"
+      ],
+      "id": "ffab"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Virgin Trains, Virgin Atlantic and Virgin Racing, are all companies owned by which famous entrepreneur?   ",
+      "correct_answer": "Richard Branson",
+      "incorrect_answers": [
+        "Alan Sugar",
+        "Donald Trump",
+        "Bill Gates"
+      ],
+      "id": "bd9b"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Where is the train station &quot;Llanfair&shy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch&quot;?",
+      "correct_answer": "Wales",
+      "incorrect_answers": [
+        "Moldova",
+        "Czech Republic",
+        "Denmark"
+      ],
+      "id": "7fa9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the name of the main Character from the Series: Dead Space?",
+      "correct_answer": "Isaac Clarke",
+      "incorrect_answers": [
+        "Ellen Ripley",
+        "Commander Shepard",
+        "Captain Kirk"
+      ],
+      "id": "e6cc"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which company did Valve cooperate with in the creation of the Vive?",
+      "correct_answer": "HTC",
+      "incorrect_answers": [
+        "Oculus",
+        "Google",
+        "Razer"
+      ],
+      "id": "1352"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the Spanish word for &quot;donkey&quot;?",
+      "correct_answer": "Burro",
+      "incorrect_answers": [
+        "Caballo",
+        "Toro",
+        "Perro"
+      ],
+      "id": "4e17"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "In the English language, what is the name of the &quot;&amp;&quot; character?",
+      "correct_answer": "Ampersand",
+      "incorrect_answers": [
+        "Eightslash",
+        "And Sign",
+        "Obelus "
+      ],
+      "id": "97db"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the nickname of the US state of California?",
+      "correct_answer": "Golden State",
+      "incorrect_answers": [
+        "Sunshine State",
+        "Bay State",
+        "Treasure State"
+      ],
+      "id": "8b52"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What company developed the vocaloid Hatsune Miku?",
+      "correct_answer": "Crypton Future Media",
+      "incorrect_answers": [
+        "Sega",
+        "Sony",
+        "Yamaha Corporation"
+      ],
+      "id": "a047"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "According to Sherlock Holmes, &quot;If you eliminate the impossible, whatever remains, however improbable, must be the...&quot;",
+      "correct_answer": "Truth",
+      "incorrect_answers": [
+        "Answer",
+        "Cause",
+        "Source"
+      ],
+      "id": "30a1"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the nickname of the US state of California?",
+      "correct_answer": "Golden State",
+      "incorrect_answers": [
+        "Sunshine State",
+        "Bay State",
+        "Treasure State"
+      ],
+      "id": "b384"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the first book of the Old Testament?",
+      "correct_answer": "Genesis",
+      "incorrect_answers": [
+        "Exodus",
+        "Leviticus",
+        "Numbers"
+      ],
+      "id": "1acc"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of these words refers to something made, distributed, or sold illegally?",
+      "correct_answer": "Bootleg",
+      "incorrect_answers": [
+        "Bootblack",
+        "Bootlace",
+        "Bootstrap"
+      ],
+      "id": "b4b0"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?",
+      "correct_answer": "Demolition",
+      "incorrect_answers": [
+        "The Dream Team",
+        "The Bushwhackers",
+        "The British Bulldogs"
+      ],
+      "id": "1617"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "In the video-game franchise Kingdom Hearts, the main protagonist, carries a weapon with what shape?",
+      "correct_answer": "Key",
+      "incorrect_answers": [
+        "Sword",
+        "Pen",
+        "Cellphone"
+      ],
+      "id": "8860"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of these holidays is NOT usually celebrated in the month of December?",
+      "correct_answer": "Thanksgiving",
+      "incorrect_answers": [
+        "Christmas",
+        "Kwanzaa",
+        "Hanukkah"
+      ],
+      "id": "9672"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What alcoholic drink is made from molasses?",
+      "correct_answer": "Rum",
+      "incorrect_answers": [
+        "Gin",
+        "Vodka",
+        "Whisky"
+      ],
+      "id": "fae9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which company did Valve cooperate with in the creation of the Vive?",
+      "correct_answer": "HTC",
+      "incorrect_answers": [
+        "Oculus",
+        "Google",
+        "Razer"
+      ],
+      "id": "29bb"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the name of the main Character from the Series: Dead Space?",
+      "correct_answer": "Isaac Clarke",
+      "incorrect_answers": [
+        "Ellen Ripley",
+        "Commander Shepard",
+        "Captain Kirk"
+      ],
+      "id": "0fee"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the first book of the Old Testament?",
+      "correct_answer": "Genesis",
+      "incorrect_answers": [
+        "Exodus",
+        "Leviticus",
+        "Numbers"
+      ],
+      "id": "6f66"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which country, not including Japan, has the most people of Japanese descent?",
+      "correct_answer": "Brazil",
+      "incorrect_answers": [
+        "China",
+        "South Korea",
+        "United States of America"
+      ],
+      "id": "3d1d"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the closest planet to our solar system&#039;s sun?",
+      "correct_answer": "Mercury",
+      "incorrect_answers": [
+        "Mars",
+        "Jupiter",
+        "Earth"
+      ],
+      "id": "7a00"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "According to Sherlock Holmes, &quot;If you eliminate the impossible, whatever remains, however improbable, must be the...&quot;",
+      "correct_answer": "Truth",
+      "incorrect_answers": [
+        "Answer",
+        "Cause",
+        "Source"
+      ],
+      "id": "6e1e"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "In Half-Life, what is the name of the alien that attaches to heads?",
+      "correct_answer": "Headcrab",
+      "incorrect_answers": [
+        "Bullsquid",
+        "Vortigaunt",
+        "Facehugger"
+      ],
+      "id": "1418"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which candy is NOT made by Mars?",
+      "correct_answer": "Almond Joy",
+      "incorrect_answers": [
+        "M&amp;M&#039;s",
+        "Twix",
+        "Snickers"
+      ],
+      "id": "27ce"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is Cuba&#039;s official, most widely spoken language?",
+      "correct_answer": "Spanish",
+      "incorrect_answers": [
+        "Portuguese",
+        "French",
+        "Italian"
+      ],
+      "id": "e4b9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What zodiac sign is represented by a pair of scales?",
+      "correct_answer": "Libra",
+      "incorrect_answers": [
+        "Aries",
+        "Capricorn",
+        "Sagittarius"
+      ],
+      "id": "29f9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of the following blood component forms a plug at the site of injuries?",
+      "correct_answer": "Platelets",
+      "incorrect_answers": [
+        "Red blood cells",
+        "White blood cells",
+        "Blood plasma"
+      ],
+      "id": "339f"
+    }
+  ]
+}

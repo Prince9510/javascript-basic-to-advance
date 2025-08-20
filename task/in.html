@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Online Exam</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; margin: 20px; }
+    .exam-box { border: 2px solid #333; padding: 20px; margin: 20px; display:none; }
+    .submit-msg { color: red; font-weight: bold; }
+    button { padding:10px 20px; font-size:16px; }
+  </style>
+</head>
+<body>
+  <h2>Secure Online Exam</h2>
+  <button id="startBtn">Start Exam</button>
+
+  <form id="examForm">
+    <div class="exam-box">
+      <p>Q1. What is 5 × 6 ?</p>
+      <input type="radio" name="q1" value="30"> 30<br>
+      <input type="radio" name="q1" value="20"> 20<br>
+      <input type="radio" name="q1" value="40"> 40<br><br>
+      <button type="submit">Submit Exam</button>
+    </div>
+  </form>
+
+  <p id="message" class="submit-msg"></p>
+
+<script>
+let examStarted = false;
+
+function submitExam(reason="Exam submitted automatically!") {
+  document.getElementById("message").innerText = "❌ " + reason;
+  document.querySelector(".exam-box").style.display = "none";
+  document.getElementById("startBtn").style.display = "none";
+}
+
+// Open fullscreen
+function openFullscreen() {
+  let elem = document.documentElement;
+  if (elem.requestFullscreen) elem.requestFullscreen();
+  else if (elem.mozRequestFullScreen) elem.mozRequestFullScreen(); // Firefox
+  else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen(); // Chrome, Safari
+  else if (elem.msRequestFullscreen) elem.msRequestFullscreen(); // IE/Edge
+}
+
+// Detect fullscreen exit
+document.addEventListener("fullscreenchange", () => {
+  if (examStarted && !document.fullscreenElement) {
+    submitExam("You exited fullscreen!");
+  }
+});
+
+// Detect tab change
+document.addEventListener("visibilitychange", () => {
+  if (examStarted && document.hidden) {
+    submitExam("You switched tab!");
+  }
+});
+
+// Detect window blur
+window.addEventListener("blur", () => {
+  if (examStarted) {
+    submitExam("You left the exam window!");
+  }
+});
+
+// Start exam button
+document.getElementById("startBtn").addEventListener("click", () => {
+  examStarted = true;
+  openFullscreen();
+  document.querySelector(".exam-box").style.display = "block";
+});
+</script>
+</body>
+</html>

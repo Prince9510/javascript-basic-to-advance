@@ -117,7 +117,7 @@ function shuffle() {
 // console.log(deck);
 
 async function showAllDeckInScreen() {
-  let balanceCheck = await gameStart();
+  let balanceCheck = gameStart();
 
   if (!balanceCheck) {
     alert("insufficient balance!");
@@ -131,7 +131,7 @@ async function showAllDeckInScreen() {
     cards.remove();
   });
 
-  let a = await shuffle();
+  let a = shuffle();
   console.log(a);
 
   a.forEach((e, i) => {
@@ -257,7 +257,7 @@ function bet(response) {
   // console.log(lastCard);
 }
 
-function gameStart() {
+async function gameStart() {
   let game_start = document.querySelector(".game_start");
   let lowBTN = document.querySelector(".low");
   let highBTN = document.querySelector(".high");
@@ -266,9 +266,9 @@ function gameStart() {
   let multiplyer = document.querySelector(".multiplyer");
 
   let checkBalance = localStorage.getItem("balance");
-  let parseBalance = JSON.parse(checkBalance);
+  let parseBalance = await JSON.parse(checkBalance);
 
-  if (!parseBalance) {
+  if (!parseBalance || bet_amount <= 0) {
     return false;
   } else {
     if (Number.parseFloat(parseBalance) >= bet_amount) {
@@ -307,25 +307,24 @@ getBalance();
 
 async function getBalance() {
   let strtingBalance = 100000.0;
-  let getBalanceFromLocalStorage = await localStorage.getItem("balance");
+  let getBalanceFromLocalStorage = localStorage.getItem("balance");
   let myBlanace = document.querySelector(".myBlanace");
 
   if (!getBalanceFromLocalStorage) {
     localStorage.setItem("balance", JSON.stringify(strtingBalance));
-    let getBal = await localStorage.getItem("balance");
+    let getBal = localStorage.getItem("balance");
     let balance = await JSON.parse(getBal);
 
     myBlanace.innerText = `$${Number.parseFloat(balance).toFixed(2)}`;
   } else {
-    // console.log(getBalanceFromLocalStorage)
-    let balance = JSON.parse(getBalanceFromLocalStorage);
+    let balance = await JSON.parse(getBalanceFromLocalStorage);
     myBlanace.innerText = `$${Number.parseFloat(balance).toFixed(2)}`;
   }
 }
 
 async function updateBalance(amount) {
-  let getBalanceFromLocalStorage = await localStorage.getItem("balance");
-  let balance = JSON.parse(getBalanceFromLocalStorage);
+  let getBalanceFromLocalStorage = localStorage.getItem("balance");
+  let balance = await JSON.parse(getBalanceFromLocalStorage);
   let numberAmount = Number(amount);
   if (!(balance >= numberAmount)) {
     return false;
@@ -379,10 +378,10 @@ function manageFund(betCount) {
   localStorage.setItem("betCount", JSON.stringify(betCount));
 }
 
-function cashout() {
+async function cashout() {
   let bet_amount = document.querySelector(".bet_amount").value;
   let getBetCountFromLocalStorage = localStorage.getItem("betCount");
-  let parseBetCountFromLocalStorage = JSON.parse(getBetCountFromLocalStorage);
+  let parseBetCountFromLocalStorage = await JSON.parse(getBetCountFromLocalStorage);
   console.log(
     "🚀 ~ cashout ~ parseBetCountFromLocalStorage:",
     parseBetCountFromLocalStorage
@@ -393,7 +392,7 @@ function cashout() {
     Number.parseFloat(bet_amount);
 
   let getBalanceFromLocalStorage = localStorage.getItem("balance");
-  let parseBalance = JSON.parse(getBalanceFromLocalStorage);
+  let parseBalance = await JSON.parse(getBalanceFromLocalStorage);
 
   parseBalance += newBalance;
 

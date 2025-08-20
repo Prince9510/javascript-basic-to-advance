@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashbaord.css" />
+  </head>
+  <body>
+    <header>
+      <div class="userInfo">
+        <span>Prince Satasiya</span>
+        <div class="userLogo"><i class="ri-user-line"></i></div>
+        <div title="LOGOUT" class="userLogout">
+          <i class="ri-logout-box-r-line"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <button type="button" class="startBTN" onclick="startQuiz()">
+        START QUIZ
+      </button>
+
+      <div class="examContainer">
+        <!-- <p id="question">
+          1. What kind of aircraft was developed by Igor Sikorsky in the United
+          States in 1942?
+        </p>
+
+        <div class="parentOfAnswerOption">
+          <label for="A">
+            <div class="answerOption">
+              <input type="radio" id="A" name="radionBTN" />
+              <p>this is a answer ?</p>
+            </div>
+          </label>
+        </div>
+        <button type="button" class="next" onclick="onNextQuestion('next')">
+          NEXT
+        </button>
+        <span class="questionList">1/12</span>
+        <button type="button" class="submit">SUBMIT</button>
+      </div> -->
+    </div>
+
+    <div class="loaderPerent" id="loaderPerentDiv">
+      <div id="loader"></div>
+    </div>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

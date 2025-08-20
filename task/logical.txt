@@ -1,0 +1,97 @@
+Here are 20 logical reasoning questions that are often used in IT interviews:
+
+1. You have 8 balls of the same size. 7 of them weigh the same, and one is heavier. How do you find the heavier ball in just 2 weighings?
+
+2. There are three switches outside a closed room. Inside the room, there are three bulbs. You can only enter the room once. How do you figure out which switch corresponds to which bulb?
+
+3. A train leaves New York at 8:00 AM at 60 km/h. Another train leaves from Boston at 9:00 AM at 90 km/h. When will they meet if the distance between New York and Boston is 450 km?
+
+4. You have two ropes that each burn in exactly one hour but at an uneven rate. How do you measure exactly 45 minutes?
+
+5. A man has two sons. One always tells the truth, and the other always lies. You meet one of them at a crossroads and want to know the way to the city. What will you ask?
+
+6. You have a 3-liter jug and a 5-liter jug. How can you measure exactly 4 liters of water?
+
+7. 100 prisoners are standing in a line. Each is wearing either a black or a white hat. They can only see the hats of those in front of them. They must each guess their own hat color, starting from the back. How can they maximize correct guesses?
+
+8. A clock shows the time as 3:15. What is the angle between the hour hand and the minute hand?
+
+9. You have 25 horses and you need to find the fastest 3 horses. You can race only 5 at a time and there’s no stopwatch. What is the minimum number of races required?
+
+10. A farmer has to take a wolf, a goat, and a cabbage across a river. His boat can only carry him and one other item. If left alone, the wolf will eat the goat, and the goat will eat the cabbage. How can he get all three across safely?
+
+11. You have 9 coins, one of which is fake and lighter. How many weighings with a balance scale do you need to find the fake coin?
+
+12. You are in a room with two doors. One leads to freedom, the other to death. Each door is guarded by one guard. One guard always tells the truth, and the other always lies. You can ask only one question. What will you ask?
+
+13. A man drops a ball from a building 100 meters tall. Each time it bounces, it rises to half the height it fell. How many bounces will it take before the ball stops bouncing?
+
+14. There are 12 identical-looking balls, but one of them is either heavier or lighter. Using a balance scale, what is the minimum number of weighings needed to find the odd one out?
+
+15. If you have 100 doors all initially closed, and you toggle every door on every nth pass (where n is 1 to 100), which doors will remain open at the end?
+
+16. A man walks into a bar and asks for a glass of water. The bartender points a gun at him. The man says “Thank you” and leaves. Why?
+
+17. A village has exactly 1 barber who shaves everyone who does not shave himself. Who shaves the barber?
+
+18. A 5-digit number is such that the first digit is equal to the number of zeros, the second digit equals the number of ones, and so on. What is the number?
+
+19. You are blindfolded and have 10 coins on a table. You don’t know which side is heads or tails. How do you make two piles with the same number of heads?
+
+20. A man is looking at a picture of someone. His friend asks, “Who is it?” The man replies, “Brothers and sisters, I have none. But that man’s father is my father’s son.” Who is in the picture?
+
+
+
+
+
+
+
+# 20 Logical Reasoning Questions
+
+1. A farmer has a wolf, a goat, and a cabbage. He must cross a river with a boat that can carry him plus one item. If he leaves the wolf with the goat, the wolf will eat the goat; if he leaves the goat with the cabbage, the goat will eat the cabbage. How can he carry all three across safely?
+
+2. You have two ropes. Each rope burns for exactly 60 minutes, but not at a uniform rate. How can you measure 45 minutes using the ropes and a lighter?
+
+3. Three boxes are labeled: APPLES, ORANGES, and APPLES & ORANGES. All labels are wrong. You may pick one fruit from one box (without looking inside). Which box do you pick from to correctly label all three boxes?
+
+4. Five people need to cross a bridge at night with one torch. At most two can cross at a time. Their crossing times are 1, 2, 7, 11, and 15 minutes. What is the minimum total time for all to cross?
+
+5. You’re given 8 balls of identical appearance; 7 weigh the same and 1 is slightly heavier. Using a balance scale (no weights), what is the minimum number of weighings to find the heavier ball?
+
+6. A water tank has two inlet pipes and one outlet pipe. Inlet A fills the tank in 3 hours, inlet B in 6 hours, and the outlet empties it in 12 hours. If all are open, how long will it take to fill the tank from empty?
+
+7. A sequence of numbers goes: 2, 3, 5, 9, 17, ? What is the next number and what is the rule?
+
+8. You have 4 missionaries and 4 cannibals on one bank. A boat carries at most two people. How do you get everyone to the other side without ever letting cannibals outnumber missionaries on either bank?
+
+9. A clock chimes once at 1:00, twice at 2:00, and so on. Between 1:00 and 12:00 (inclusive), how many total chimes will it make?
+
+10. A detective finds a sign: "The murderer lives on the third floor." He knows the number written is correct but the floor count is off by one. If the building has floors numbered 1 to 5, which floor does the murderer actually live on and why?
+
+11. You have 12 identical-looking coins; one is counterfeit and lighter. Using a balance scale, what is the minimum number of weighings needed to find the counterfeit (you do not know if it’s heavier or lighter)?
+
+
+
+
+
+12. There are 6 people at a round table. Each person shakes hands with exactly two others. Is this possible? If yes, draw a feasible handshake arrangement; if no, explain why.
+
+13. A 3-digit number is such that the first digit is the number of zeros in the number, the second digit is the number of ones, and the third digit is the number of twos. What is the number?
+
+14. You’re given 5 coin piles with counts: 1, 2, 3, 4, 5 coins. You may perform one move: take one coin from any pile and add it to any other pile. Can you make all five piles have the same number of coins? If yes, show the move; if no, explain why not.
+
+15. A rectangular field has a perimeter of 100 meters and area maximized. What are its length and width?
+
+16. A man has 4 hats and 4 coats, each hat pairs uniquely with one coat. He loses labels and randomly mixes them into 4 labeled boxes (one hat per box) so that no hat is in the correct box. What is the number of derangements for 4 items (i.e., how many ways can none be in its original box)?
+
+17. Two trains, A and B, are 300 km apart and heading toward each other at speeds 60 km/h and 40 km/h, respectively. A fly starts at A and flies toward B at 90 km/h; when it reaches B it immediately turns and flies back to A, repeating until the trains collide. How far does the fly travel?
+
+18. You have an unlabelled 3-liter and 5-liter jug and an unlimited water supply. How can you measure exactly 4 liters?
+
+19. A coding interview problem: Given an array of integers where every integer appears exactly twice except for one integer which appears once, how do you find the unique integer in linear time and constant space?
+
+20. A group of people stand in a circle and every 3rd person is eliminated until only one remains (starting count at person 1). For 10 people and step = 3, who remains? (This is a Josephus problem variant.)
+
+---
+
+Want solutions and step-by-step explanations for these? Say "Yes — please provide answers" and I’ll add detailed solutions.

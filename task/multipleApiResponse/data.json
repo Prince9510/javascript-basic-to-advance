@@ -1,0 +1,168 @@
+{
+  "users": [
+    {
+      "id": "1755512400867",
+      "name": "Prince Satasiya",
+      "email": "satasiyaprince9510@gmail.com",
+      "phone": "+91 0816063684",
+      "password": "Prince@123",
+      "timestamp": "1755675960562",
+      "quizStatus": {
+        "status": true,
+        "questionIndex": 0
+      }
+    }
+  ],
+  "questions": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the first book of the Old Testament?",
+      "correct_answer": "Genesis",
+      "incorrect_answers": [
+        "Exodus",
+        "Leviticus",
+        "Numbers"
+      ],
+      "id": "6f66"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which country, not including Japan, has the most people of Japanese descent?",
+      "correct_answer": "Brazil",
+      "incorrect_answers": [
+        "China",
+        "South Korea",
+        "United States of America"
+      ],
+      "id": "3d1d"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the closest planet to our solar system&#039;s sun?",
+      "correct_answer": "Mercury",
+      "incorrect_answers": [
+        "Mars",
+        "Jupiter",
+        "Earth"
+      ],
+      "id": "7a00"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "According to Sherlock Holmes, &quot;If you eliminate the impossible, whatever remains, however improbable, must be the...&quot;",
+      "correct_answer": "Truth",
+      "incorrect_answers": [
+        "Answer",
+        "Cause",
+        "Source"
+      ],
+      "id": "6e1e"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "In Half-Life, what is the name of the alien that attaches to heads?",
+      "correct_answer": "Headcrab",
+      "incorrect_answers": [
+        "Bullsquid",
+        "Vortigaunt",
+        "Facehugger"
+      ],
+      "id": "1418"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which candy is NOT made by Mars?",
+      "correct_answer": "Almond Joy",
+      "incorrect_answers": [
+        "M&amp;M&#039;s",
+        "Twix",
+        "Snickers"
+      ],
+      "id": "27ce"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is Cuba&#039;s official, most widely spoken language?",
+      "correct_answer": "Spanish",
+      "incorrect_answers": [
+        "Portuguese",
+        "French",
+        "Italian"
+      ],
+      "id": "e4b9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What zodiac sign is represented by a pair of scales?",
+      "correct_answer": "Libra",
+      "incorrect_answers": [
+        "Aries",
+        "Capricorn",
+        "Sagittarius"
+      ],
+      "id": "29f9"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "Which of the following blood component forms a plug at the site of injuries?",
+      "correct_answer": "Platelets",
+      "incorrect_answers": [
+        "Red blood cells",
+        "White blood cells",
+        "Blood plasma"
+      ],
+      "id": "339f"
+    }
+  ],
+  "quiz": [
+    {
+      "answers": [
+        "Exodus",
+        "China",
+        "Mars",
+        "Source",
+        "Headcrab",
+        "Almond Joy",
+        "Spanish",
+        "Libra",
+        "White blood cells",
+        "Numbers",
+        "Brazil",
+        "Mercury",
+        "Truth",
+        "Headcrab",
+        "M&M's",
+        "Portuguese",
+        "Aries",
+        "Red blood cells"
+      ],
+      "id": "1755512400867"
+    },
+    {
+      "id": "1755512400867",
+      "answers": []
+    },
+    {
+      "id": "1755512400867",
+      "answers": []
+    }
+  ]
+}
