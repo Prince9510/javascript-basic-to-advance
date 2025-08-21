@@ -3,15 +3,6 @@ window.addEventListener("load", function () {
   checkQuizStatusTrueOrFalse();
 });
 
-// document.addEventListener("click", (e) => {
-//   console.log(e);
-//   if (document.fullscreenElement) {
-//     document.exitFullscreen();
-//   } else {
-//     document.documentElement.requestFullscreen();
-//   }
-// });
-
 let loaderPerentDiv = document.getElementById("loaderPerentDiv");
 let URL = "http://localhost:3000/users";
 let questionURL = "http://localhost:3000/questions";
