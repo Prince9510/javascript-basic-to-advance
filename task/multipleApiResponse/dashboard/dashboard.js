@@ -400,6 +400,8 @@ async function checkQuizStatusTrueOrFalse(response) {
 function popup() {
   let popupContainer = document.querySelector(".popupContainer");
   popupContainer.style.display = "flex";
+    document.querySelector(".startBTN").style.display = "none";
+
 }
 function exitPopup() {
   let popupContainer = document.querySelector(".popupContainer");
