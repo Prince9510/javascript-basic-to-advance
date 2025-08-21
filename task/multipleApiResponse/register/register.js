@@ -1,6 +1,7 @@
 window.addEventListener("load", function () {
   userLoginOrNot();
 });
+const quizURL = "http://localhost:3000/quiz";
 const URL = "http://localhost:3000/users";
 const form = document.querySelector("form");
 let name = document.getElementById("name");
@@ -44,7 +45,6 @@ phone.addEventListener("input", function () {
     this.value = "";
   }
 });
-
 
 function handleError(err) {
   error_text.innerText = err;
@@ -291,18 +291,32 @@ async function register() {
         phone: phone.value,
         password: confirmPassword.value,
         timestamp: Date.now().toString(),
-        quiz: false,
+        quizStatus: {
+          status: false,
+          questionIndex: 0,
+        },
       }),
     })
       .then((data) => data.json())
-      .then((data) => {
+      .then(async (data) => {
         console.log(data);
         let obj = {
           previousUserID: data.id,
           timestamp: data.timestamp,
         };
-
         localStorage.setItem("token", JSON.stringify(obj));
+
+        console.log("🚀 ~ register ~ data:", data);
+        await fetch(quizURL, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            id: data.id,
+            answers: [],
+          }),
+        });
       })
 
       .then(() => (window.location.href = "../dashboard/dashboard.html"));

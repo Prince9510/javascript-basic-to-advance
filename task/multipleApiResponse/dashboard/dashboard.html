@@ -13,9 +13,9 @@
   <body>
     <header>
       <div class="userInfo">
-        <span>Prince Satasiya</span>
+        <span class="userName">Prince Satasiya</span>
         <div class="userLogo"><i class="ri-user-line"></i></div>
-        <div title="LOGOUT" class="userLogout">
+        <div title="LOGOUT" class="userLogout" onclick="logout()">
           <i class="ri-logout-box-r-line"></i>
         </div>
       </div>
@@ -48,8 +48,33 @@
       </div> -->
     </div>
 
+    <div class="resultContainer">
+      <div class="correctContainer">
+        <span>Correct answer</span>
+        <span class="correctCounter"></span>
+      </div>
+      <div class="inCorrectContainer">
+        <span>Wrong answer</span>
+        <span class="incorrectCounter"></span>
+      </div>
+      <div class="totalQuestionContainer">
+        <span>Total Questions</span>
+        <span class="questionCounter"></span>
+      </div>
+      <button class="restart" onclick="startQuiz()">Reattempt</button>
+    </div>
+
     <div class="loaderPerent" id="loaderPerentDiv">
       <div id="loader"></div>
+    </div>
+
+    <div class="popupContainer">
+        <div class="popupBox">
+          <h2>You left the exam halfway, which is a violation of the rules. Submit your exam immediately!</h2>
+
+          <button class="popupBTN" onclick="checkQuizStatusTrueOrFalse(true)">SUBMIT</button>
+
+        </div>
     </div>
     <script src="dashboard.js"></script>
   </body>

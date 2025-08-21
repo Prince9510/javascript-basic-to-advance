@@ -1,6 +1,16 @@
 window.addEventListener("load", function () {
   userLoginOrNot();
+  checkQuizStatusTrueOrFalse();
 });
+
+// document.addEventListener("click", (e) => {
+//   console.log(e);
+//   if (document.fullscreenElement) {
+//     document.exitFullscreen();
+//   } else {
+//     document.documentElement.requestFullscreen();
+//   }
+// });
 
 let loaderPerentDiv = document.getElementById("loaderPerentDiv");
 let URL = "http://localhost:3000/users";
@@ -24,6 +34,9 @@ async function getUserIdFromLocalStorage() {
 async function userLoginOrNot() {
   showLoader();
   let token = await JSON.parse(localStorage.getItem("token"));
+  if (!token) {
+    window.location.href = "../login/login.html";
+  }
 
   await fetch(URL)
     .then((data) => data.json())
@@ -43,6 +56,7 @@ async function userLoginOrNot() {
         let getTime = calculateTime / 1000;
 
         console.log(getTime);
+        userData();
 
         if (getTime > 3600) {
           window.location.href = "../login/login.html";
@@ -71,28 +85,67 @@ function fullScreen(response) {
   stopLoader();
 }
 
-async function startQuiz() {
+async function startQuiz(response) {
   fullScreen(true);
+  exitPopup();
   const examContainer = document.querySelector(".examContainer");
+  document.querySelector(".resultContainer").style.display = "none";
+
+  const ID = await getUserIdFromLocalStorage();
 
   try {
-    let questionsList = [];
-    await fetch(questionURL)
-      .then((rawData) => rawData.json())
-      .then((data) => (questionsList = data));
-    console.log(questionsList);
+    if (!response) {
+      let questionsList = [];
 
-    const userData = await updateUserQiuzState(0);
-    const questionIndex = userData.quizStatus.questionIndex;
-    // const questionsList = response;
-    const firstQuestion = questionsList[questionIndex];
+      await fetch(`${quizURL}/${ID}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id: ID,
+          answers: [],
+        }),
+      });
 
-    showQuestion(
-      examContainer,
-      firstQuestion,
-      questionIndex,
-      questionsList.length
-    );
+      await fetch(questionURL)
+        .then((rawData) => rawData.json())
+        .then((data) => (questionsList = data));
+      console.log(questionsList);
+
+      const userData = await updateUserQiuzState(0);
+      const questionIndex = userData.quizStatus.questionIndex;
+      // const questionsList = response;
+      const firstQuestion = questionsList[questionIndex];
+
+      showQuestion(
+        examContainer,
+        firstQuestion,
+        questionIndex,
+        questionsList.length
+      );
+    } else {
+      await fetch(questionURL)
+        .then((rawData) => rawData.json())
+        .then((data) => (questionsList = data));
+      console.log(questionsList);
+
+      const userData = await updateUserQiuzState(response);
+      // debugger;
+      const questionIndex = userData.quizStatus.questionIndex;
+
+      console.log("🚀 ~ startQuiz ~ questionIndex:", questionIndex);
+
+      // const questionsList = response;
+      const firstQuestion = questionsList[questionIndex];
+
+      showQuestion(
+        examContainer,
+        firstQuestion,
+        questionIndex,
+        questionsList.length
+      );
+    }
     // onNextQuestion(questionsList);
   } catch (err) {
     console.log(err);
@@ -138,7 +191,6 @@ async function showQuestion(
       NEXT
     </button>
     <span class="questionList">${questionIndex + 1}/${totalQuestions}</span>
-    <button type="button" class="submit">SUBMIT</button>
   `;
   examContainer.innerHTML = qu;
 }
@@ -146,19 +198,6 @@ async function showQuestion(
 async function onNextQuestion() {
   const examContainer = document.querySelector(".examContainer");
 
-  // if (Array.isArray(response)) {
-  //   const userData = await updateUserQiuzState(0);
-  //   const questionIndex = userData.quizStatus.questionIndex;
-  //   const questionsList = response;
-  //   const firstQuestion = questionsList[questionIndex];
-
-  //   showQuestion(
-  //     examContainer,
-  //     firstQuestion,
-  //     questionIndex,
-  //     questionsList.length
-  //   );
-  // } else {
   const radioButtons = document.querySelectorAll('input[name="radionBTN"]');
   const isValid = [...radioButtons].some((button) => button.checked);
   if (!isValid) {
@@ -169,7 +208,7 @@ async function onNextQuestion() {
   const answer = checkBoxes.getAttribute("id");
 
   try {
-    const userData = await updateUserQiuzState("next");
+    const userData = await updateUserQiuzState();
     const questionIndex = userData.quizStatus.questionIndex;
     console.log("🚀 ~ onNextQuestion ~ questionIndex:", questionIndex);
 
@@ -190,7 +229,6 @@ async function onNextQuestion() {
           answer
         );
         document.querySelector(".next").innerText = "SUBMIT";
-        
       } else {
         showQuestion(
           examContainer,
@@ -203,11 +241,11 @@ async function onNextQuestion() {
     } else {
       let lastQuestion = questionsList[questionIndex - 1];
       await updateQuizQuestionList(lastQuestion, answer);
+      result();
     }
   } catch (err) {
     console.error("Error fetching or rendering next question:", err);
   }
-  // }
 }
 
 async function updateUserQiuzState(response) {
@@ -220,7 +258,13 @@ async function updateUserQiuzState(response) {
     } else {
       await fetch(`${URL}/${ID}`)
         .then((rawData) => rawData.json())
-        .then((data) => (state = ++data.quizStatus.questionIndex));
+        .then((data) => {
+          if (typeof response == "object") {
+            state = data.quizStatus.questionIndex;
+          } else {
+            state = ++data.quizStatus.questionIndex;
+          }
+        });
     }
 
     let obj = {
@@ -240,19 +284,6 @@ async function updateUserQiuzState(response) {
       .then((data) => {
         userData = data;
       });
-
-    if (userData.quizStatus.questionIndex == 0) {
-      await fetch(quizURL, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          id: ID,
-          answers: [],
-        }),
-      });
-    }
 
     return userData;
   } catch (err) {
@@ -288,12 +319,104 @@ async function updateQuizQuestionList(question, answerByUser) {
   }
 }
 
+async function result() {
+  showLoader();
+  const examContainer = document.querySelector(".examContainer");
+  const resultContainer = document.querySelector(".resultContainer");
+  document.querySelector(".startBTN").style.display = "none";
+  resultContainer.style.display = "flex";
+  examContainer.style.display = "none";
+  let ID = await getUserIdFromLocalStorage();
+  // showLoader();
+  let answerArray = [];
+  let correct_answer;
 
+  try {
+    let questionsList = [];
+    await fetch(questionURL)
+      .then((rawData) => rawData.json())
+      .then((data) => (questionsList = data));
 
+    await fetch(`${quizURL}/${ID}`)
+      .then((rawData) => rawData.json())
+      .then((data) => (answerArray = data.answers))
+      .then(() => {
+        correct_answer = answerArray.filter((element) => {
+          return questionsList.some((item) => element === item.correct_answer);
+        });
+      })
+      .then(async () => {
+        await fetch(`${URL}/${ID}`, {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            quizStatus: {
+              status: false,
+              questionIndex: 0,
+            },
+          }),
+        });
 
+        document.querySelector(".correctCounter").innerText =
+          correct_answer.length;
+        document.querySelector(".incorrectCounter").innerText =
+          questionsList.length - correct_answer.length;
+        document.querySelector(".questionCounter").innerText =
+          questionsList.length;
+      });
+  } catch (err) {
+    console.log(err);
+  } finally {
+    stopLoader();
+  }
+}
 
+async function checkQuizStatusTrueOrFalse(response) {
+  showLoader();
+  let ID = await getUserIdFromLocalStorage();
+  let userStatus;
 
+  try {
+    await fetch(`${URL}/${ID}`)
+      .then((rawData) => rawData.json())
+      .then((data) => (userStatus = data.quizStatus))
+      .then(() => {
+        if (userStatus.status) {
+          popup();
+          if (response) {
+            startQuiz(userStatus);
+          }
+        }
+      });
+  } catch (err) {
+    console.log(err);
+  } finally {
+    stopLoader();
+  }
+}
 
-function result(){
+function popup() {
+  let popupContainer = document.querySelector(".popupContainer");
+  popupContainer.style.display = "flex";
+}
+function exitPopup() {
+  let popupContainer = document.querySelector(".popupContainer");
+  popupContainer.style.display = "none";
+}
 
+async function userData() {
+  let userName = document.querySelector(".userName");
+  const ID = await getUserIdFromLocalStorage();
+  await fetch(`${URL}/${ID}`)
+    .then((rawData) => rawData.json())
+    .then((data) => {
+      userName.innerText = data.name;
+    });
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  userLoginOrNot();
 }

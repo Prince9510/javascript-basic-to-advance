@@ -7,6 +7,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .loaderPerent{
     height: 100vh;
     width: 100%;
@@ -134,15 +137,7 @@ header{
     /* justify-self: flex-end; */
 }
 
-.submit{
-    cursor: pointer;
-    height: 40px;
-    width: 150px;
-    position: absolute;
-    bottom: 0;
-    /* align-self: end; */
-    /* justify-self: end; */
-}
+
 .parentOfAnswerOption{
     margin-top: 10px;
 }
@@ -151,4 +146,85 @@ header{
     right: 10px;    
     top: 10px;
     z-index: 999;
+}
+.resultContainer{
+    border: var(--border);
+    height: 300px;
+    width: 450px;
+    display: none;
+}
+.correctContainer,
+.inCorrectContainer,
+.totalQuestionContainer{
+    width: 33.33%;
+    border: var(--border);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.correctContainer span,
+.inCorrectContainer span,
+.totalQuestionContainer span{
+    font-size: 18px;
+}
+
+
+.questionCounter,
+.incorrectCounter,
+.correctCounter{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+
+.restart{
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+    /* position: absolute; */
+    /* bottom: 0; */
+
+    align-self: end;
+    justify-self: end;
+    position: absolute;
+
+}
+
+.popupContainer{
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    /* background-color: rgba(0, 255, 255, 0.232); */
+    display: none;
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+.popupBox{
+    height: 200px;
+    width: 450px;
+    background-color: white;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    flex-direction: column;
+}
+.popupBox h2{
+    font-size: 18px;
+    text-align: center;
+    color: red;
+
+}
+.popupBox button{
+    margin-top: 20px;
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
 }
