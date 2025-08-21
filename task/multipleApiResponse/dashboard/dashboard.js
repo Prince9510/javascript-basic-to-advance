@@ -18,6 +18,9 @@ function stopLoader() {
 
 async function getUserIdFromLocalStorage() {
   let ID = await JSON.parse(localStorage.getItem("token"));
+  if (!ID) {
+    logout();
+  }
 
   return ID.previousUserID;
 }
